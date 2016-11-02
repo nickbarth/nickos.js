@@ -1,5 +1,6 @@
 <template>
-  <div class="screen" v-on:mousemove="mousemove($event)">
+  <div class="desktop" v-on:mousemove="mousemove($event)">
+    <screen></screen>
     <icon v-for="(icon, index) in icons"
       @move="dragIcon($event)"
       v-bind:icon_index="index"
@@ -8,15 +9,20 @@
 </template>
 
 <script>
-  import screen from './empty.vue'
   import programs from './empty.vue'
   import desktop from './empty.vue'
   import icon from './icon.vue'
   import startmenu from './empty.vue'
+  import screen from './screen.vue'
   export default {
     data () {
       return {
         dragging: -1,
+        screen: {
+          label: "Finder",
+          top: "50",
+          left: "50"
+        },
         icons: [
           {
             label: "My Computer",
@@ -71,7 +77,7 @@
 </script>
 
 <style scope>
-  .screen {
+  .desktop {
     height: 100%;
     margin: 0;
     padding: 0;
