@@ -1,3 +1,5 @@
+server:
+	php -S localhost:5000
 reload:
 	shiftf5
 default:
