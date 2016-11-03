@@ -1,8 +1,9 @@
 <template>
   <div class="desktop" v-on:mousemove="mousemove($event)">
     <screen @move="drag($event)" :icon_index="0" :icon="components[0]"></screen>
+    <screen @move="drag($event)" :icon_index="1" :icon="components[1]"></screen>
     <icon v-for="(obj, index) in getComponents('icon')"
-      @move="drag($event)" :icon_index="index + 1"
+      @move="drag($event)" :icon_index="index + 2"
       track-by="index" :icon="obj"></icon>
   </div>
 </template>
@@ -21,7 +22,15 @@
         },
         components: [
           {
-            label: "Finder",
+            label: "Finder 1",
+            type: "window",
+            offsetY: 10,
+            offsetX: 250,
+            top: "300",
+            left: "200"
+          },
+          {
+            label: "Finder 2",
             type: "window",
             offsetY: 10,
             offsetX: 250,

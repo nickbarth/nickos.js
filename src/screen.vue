@@ -23,8 +23,6 @@
 <style scope>
   .screen {
     position: absolute;
-    top: 0;
-    left: 0;
     height: 250px;
     width: 500px;
     margin: 0;
