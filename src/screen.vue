@@ -1,14 +1,30 @@
 <template>
-  <div class="screen">
-    <div class="infobar">
+  <div class="screen" v-bind:style="position">
+    <div class="infobar" @mousedown="move(icon_index)"
+                         @mouseup="move(-1)">
       Finder
       <button class="close">X</button>
     </div>
   </div>
 </template>
 
+<script>
+  import _ from 'lodash'
+  import moveable from './moveable'
+
+  let module = {
+    props: ['icon_index', 'icon'],
+  }
+
+  _.merge(module, moveable)
+  export default module
+</script>
+
 <style scope>
   .screen {
+    position: absolute;
+    top: 0;
+    left: 0;
     height: 250px;
     width: 500px;
     margin: 0;

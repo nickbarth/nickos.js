@@ -1,43 +1,32 @@
 <template>
-  <div class="icon" v-bind:style="style" @mousedown="move(icon_index)"
-                                         @mouseup="move(-1)"
-                                         @dblclick="click($event)">
+  <div class="icon" v-bind:style="position" @mousedown="move(icon_index)"
+                                            @mouseup="move(-1)"
+                                            @dblclick="click($event)">
     <div>{{ icon.graphic }}</div>
     <div>{{ icon.label }}</div>
   </div>
 </template>
 
 <script>
-  export default {
+  import _ from 'lodash'
+  import moveable from './moveable'
+
+  let module = {
     props: ['icon_index', 'icon'],
     data() {
       return {
         test: 4
       }
     },
-    computed: {
-      style() {
-        return {
-          top: this.icon.top,
-          left: this.icon.left
-        }
-      }
-    },
     methods: {
-      ready() {
-        console.log(this.props.graphic)
-      },
-      dragstart(event) {
-        event.dataTransfer.setData('text/html', this.icon_index)
-      },
-      move(index) {
-        this.$emit('move', index)
-      },
       click(event) {
         console.log("clicked")
       }
     },
   }
+
+  _.merge(module, moveable)
+  export default module
 </script>
 
 <style scope>
