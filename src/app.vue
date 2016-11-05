@@ -18,6 +18,7 @@
   export default {
     data () {
       return {
+        zstack: 1,
         dragging: -1,
         dragX: 0,
         dragY: 0,
@@ -27,12 +28,14 @@
           {
             label: "Finder 1",
             type: "window",
+            zindex: 0,
             top: "350",
             left: "250"
           },
           {
             label: "Finder 2",
             type: "window",
+            zindex: 0,
             top: "75",
             left: "200"
           },
@@ -40,6 +43,7 @@
             label: "Disk",
             graphic: "cpu",
             type: "icon",
+            zindex: 0,
             top: "50",
             left: "50"
           },
@@ -47,6 +51,7 @@
             label: "Docs",
             graphic: "folder",
             type: "icon",
+            zindex: 0,
             top: "150",
             left: "50"
           },
@@ -54,6 +59,7 @@
             label: "Calc",
             graphic: "calc",
             type: "icon",
+            zindex: 0,
             top: "250",
             left: "50"
           },
@@ -61,6 +67,7 @@
             label: "Notes",
             graphic: "notes",
             type: "icon",
+            zindex: 0,
             top: "350",
             left: "50"
           },
@@ -68,6 +75,7 @@
             label: "Trash",
             graphic: "trash",
             type: "icon",
+            zindex: 0,
             top: "450",
             left: "50"
           },
@@ -81,12 +89,11 @@
         })
       },
       drag (index) {
-        console.log('dragging', index)
-        this.dragging = index
         if (index === -1) {
           this.dragY = 0
           this.dragX = 0
         }
+        this.dragging = index
       },
       mousemove (event) {
         event.preventDefault()
@@ -96,6 +103,8 @@
           if (this.dragY === 0 && this.dragX === 0) {
             this.dragX = item.left - event.pageX
             this.dragY = item.top - event.pageY
+            item.zindex = this.zstack
+            this.zstack++
           }
           item.top = event.pageY + this.dragY
           item.left = event.pageX + this.dragX

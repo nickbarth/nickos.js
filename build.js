@@ -22818,6 +22818,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 exports.default = {
   data: function data() {
     return {
+      zstack: 1,
       dragging: -1,
       dragX: 0,
       dragY: 0,
@@ -22825,41 +22826,48 @@ exports.default = {
       components: [{
         label: "Finder 1",
         type: "window",
+        zindex: 0,
         top: "350",
         left: "250"
       }, {
         label: "Finder 2",
         type: "window",
+        zindex: 0,
         top: "75",
         left: "200"
       }, {
         label: "Disk",
         graphic: "cpu",
         type: "icon",
+        zindex: 0,
         top: "50",
         left: "50"
       }, {
         label: "Docs",
         graphic: "folder",
         type: "icon",
+        zindex: 0,
         top: "150",
         left: "50"
       }, {
         label: "Calc",
         graphic: "calc",
         type: "icon",
+        zindex: 0,
         top: "250",
         left: "50"
       }, {
         label: "Notes",
         graphic: "notes",
         type: "icon",
+        zindex: 0,
         top: "350",
         left: "50"
       }, {
         label: "Trash",
         graphic: "trash",
         type: "icon",
+        zindex: 0,
         top: "450",
         left: "50"
       }]
@@ -22873,12 +22881,11 @@ exports.default = {
       });
     },
     drag: function drag(index) {
-      console.log('dragging', index);
-      this.dragging = index;
       if (index === -1) {
         this.dragY = 0;
         this.dragX = 0;
       }
+      this.dragging = index;
     },
     mousemove: function mousemove(event) {
       event.preventDefault();
@@ -22888,6 +22895,8 @@ exports.default = {
         if (this.dragY === 0 && this.dragX === 0) {
           this.dragX = item.left - event.pageX;
           this.dragY = item.top - event.pageY;
+          item.zindex = this.zstack;
+          this.zstack++;
         }
         item.top = event.pageY + this.dragY;
         item.left = event.pageX + this.dragX;
@@ -22913,7 +22922,7 @@ if (module.hot) {(function () {  var hotAPI = require("vue-hot-reload-api")
   if (!module.hot.data) {
     hotAPI.createRecord("data-v-1", __vue__options__)
   } else {
-    hotAPI.reload("data-v-1", __vue__options__)
+    hotAPI.rerender("data-v-1", __vue__options__)
   }
 })()}
 },{"./empty.vue":6,"./folder.vue":7,"./icon.vue":8,"./topmenu.vue":11,"vue":3,"vue-hot-reload-api":2,"vueify/lib/insert-css":4}],6:[function(require,module,exports){
@@ -23053,7 +23062,7 @@ new Vue({
 });
 
 },{"./app.vue":5,"vue":3}],10:[function(require,module,exports){
-'use strict';
+"use strict";
 
 Object.defineProperty(exports, "__esModule", {
   value: true
@@ -23062,8 +23071,9 @@ exports.default = {
   computed: {
     position: function position() {
       return {
-        top: this.icon.top,
-        left: this.icon.left
+        "top": this.icon.top,
+        "left": this.icon.left,
+        "z-index": this.icon.zindex
       };
     }
   },

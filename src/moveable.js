@@ -2,8 +2,9 @@ export default {
   computed: {
     position() {
       return {
-        top: this.icon.top,
-        left: this.icon.left
+        "top": this.icon.top,
+        "left": this.icon.left,
+        "z-index": this.icon.zindex
       }
     }
   },
