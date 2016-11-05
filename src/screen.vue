@@ -67,6 +67,7 @@
 
   .infobar .title {
     align-self: center;
+    font-size: 14px;
     flex-grow: 1;
   }
 

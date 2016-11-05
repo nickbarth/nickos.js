@@ -26,20 +26,20 @@
             type: "window",
             offsetY: 10,
             offsetX: 250,
-            top: "300",
-            left: "200"
+            top: "350",
+            left: "250"
           },
           {
             label: "Finder 2",
             type: "window",
             offsetY: 10,
             offsetX: 250,
-            top: "0",
-            left: "0"
+            top: "75",
+            left: "200"
           },
           {
-            label: "My Computer",
-            graphic: "1",
+            label: "Disk",
+            graphic: "cpu",
             type: "icon",
             offsetY: 25,
             offsetX: 25,
@@ -47,8 +47,8 @@
             left: "50"
           },
           {
-            label: "My Documents",
-            graphic: "1",
+            label: "Docs",
+            graphic: "folder",
             type: "icon",
             offsetY: 25,
             offsetX: 25,
@@ -57,7 +57,7 @@
           },
           {
             label: "Calc",
-            graphic: "1",
+            graphic: "calc",
             type: "icon",
             offsetY: 25,
             offsetX: 25,
@@ -65,8 +65,8 @@
             left: "50"
           },
           {
-            label: "Notepad",
-            graphic: "1",
+            label: "Notes",
+            graphic: "notes",
             type: "icon",
             offsetY: 25,
             offsetX: 25,
@@ -74,8 +74,8 @@
             left: "50"
           },
           {
-            label: "Recycle Bin",
-            graphic: "1",
+            label: "Trash",
+            graphic: "trash",
             type: "icon",
             offsetY: 25,
             offsetX: 25,

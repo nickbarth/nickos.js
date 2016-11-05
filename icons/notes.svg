@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="67px" height="61px" viewBox="0 0 67 61" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 40.3 (33839) - http://www.bohemiancoding.com/sketch -->
+    <title>Notes</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <polygon id="path-1" points="0 60 60 60 60 0 0 0"></polygon>
+        <mask id="mask-2" maskContentUnits="userSpaceOnUse" maskUnits="objectBoundingBox" x="0" y="0" width="60" height="60" fill="white">
+            <use xlink:href="#path-1"></use>
+        </mask>
+        <rect id="path-3" x="7" y="50.0251784" width="60" height="6.57464327"></rect>
+        <mask id="mask-4" maskContentUnits="userSpaceOnUse" maskUnits="objectBoundingBox" x="0" y="0" width="60" height="6.57464327" fill="white">
+            <use xlink:href="#path-3"></use>
+        </mask>
+        <rect id="path-5" x="7" y="40.0251784" width="60" height="6.57464327"></rect>
+        <mask id="mask-6" maskContentUnits="userSpaceOnUse" maskUnits="objectBoundingBox" x="0" y="0" width="60" height="6.57464327" fill="white">
+            <use xlink:href="#path-5"></use>
+        </mask>
+        <rect id="path-7" x="7" y="30.0251784" width="60" height="6.57464327"></rect>
+        <mask id="mask-8" maskContentUnits="userSpaceOnUse" maskUnits="objectBoundingBox" x="0" y="0" width="60" height="6.57464327" fill="white">
+            <use xlink:href="#path-7"></use>
+        </mask>
+        <rect id="path-9" x="7" y="20.0251784" width="60" height="6.57464327"></rect>
+        <mask id="mask-10" maskContentUnits="userSpaceOnUse" maskUnits="objectBoundingBox" x="0" y="0" width="60" height="6.57464327" fill="white">
+            <use xlink:href="#path-9"></use>
+        </mask>
+        <rect id="path-11" x="7" y="10.0251784" width="60" height="6.57464327"></rect>
+        <mask id="mask-12" maskContentUnits="userSpaceOnUse" maskUnits="objectBoundingBox" x="0" y="0" width="60" height="6.57464327" fill="white">
+            <use xlink:href="#path-11"></use>
+        </mask>
+        <polygon id="path-13" points="0 59 60 59 67 1 7 1"></polygon>
+        <mask id="mask-14" maskContentUnits="userSpaceOnUse" maskUnits="objectBoundingBox" x="0" y="0" width="67" height="58" fill="white">
+            <use xlink:href="#path-13"></use>
+        </mask>
+        <polygon id="path-15" points="9 7 60.4285714 7 63 0 11.5714286 0"></polygon>
+        <mask id="mask-16" maskContentUnits="userSpaceOnUse" maskUnits="objectBoundingBox" x="0" y="0" width="54" height="7" fill="white">
+            <use xlink:href="#path-15"></use>
+        </mask>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Icons" transform="translate(-211.000000, -71.000000)" stroke="#000000" stroke-width="2" fill="#FFFFFF">
+            <g id="Notes" transform="translate(211.000000, 71.000000)">
+                <g id="Group" transform="translate(7.000000, 1.000000)">
+                    <use id="Combined-Shape" mask="url(#mask-2)" xlink:href="#path-1"></use>
+                </g>
+                <use id="Rectangle" mask="url(#mask-4)" xlink:href="#path-3"></use>
+                <use id="Rectangle" mask="url(#mask-6)" xlink:href="#path-5"></use>
+                <use id="Rectangle" mask="url(#mask-8)" xlink:href="#path-7"></use>
+                <use id="Rectangle" mask="url(#mask-10)" xlink:href="#path-9"></use>
+                <use id="Rectangle" mask="url(#mask-12)" xlink:href="#path-11"></use>
+                <use id="Combined-Shape" mask="url(#mask-14)" xlink:href="#path-13"></use>
+                <use id="Combined-Shape" mask="url(#mask-16)" xlink:href="#path-15"></use>
+            </g>
+        </g>
+    </g>
+</svg>
