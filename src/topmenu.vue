@@ -2,7 +2,7 @@
   <div class="menu">
     <ul>
       <li class="submenu">
-        <span class="header"><img class="icon" src="/icons/robot.svg"></span>
+        <span class="header"><img class="icon" src="icons/robot.svg"></span>
         <ul class="subcontent">
           <li>About</li>
         </ul>
