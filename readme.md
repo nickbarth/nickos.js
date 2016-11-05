@@ -13,4 +13,4 @@ make
 
 ### License
 
-MIT &copy; 2015 Nick Barth
+MIT &copy; 2016 Nick Barth
