@@ -1,5 +1,5 @@
 <template>
-  <div class="screen" v-bind:style="position">
+  <div class="folder" v-bind:style="position">
     <div class="infobar" @mousedown="move(icon_index)"
                          @mouseup="move(-1)">
       <button class="close"></button>
@@ -27,7 +27,7 @@
 </template>
 
 <style scoped>
-  .screen {
+  .folder {
     background: #fff;
     position: absolute;
     height: 250px;
