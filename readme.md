@@ -2,7 +2,7 @@
 
 Feux desktop enviroment in javascript using vuejs.
 
-![Screenshot](https://cdn.rawgit.com/nickbarth/nickosjs/master/screenshot.png)
+![Screenshot](https://cdn.rawgit.com/nickbarth/nickos.js/master/screenshot.png)
 
 ### Setup
 
