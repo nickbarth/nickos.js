@@ -3,7 +3,7 @@
     <div class="infobar" @mousedown="move(icon_index)"
                          @mouseup="move(-1)">
       <button class="close"></button>
-      <div class="title"><span>Finder</span></div>
+      <div class="title"><span>Folder</span></div>
     </div>
     <div class="area">
       <div class="row">
@@ -69,6 +69,11 @@
     align-self: center;
     font-size: 14px;
     flex-grow: 1;
+  }
+
+  .infobar span {
+    display: inline-block;
+    margin-left: -24px;
   }
 
   .area {
