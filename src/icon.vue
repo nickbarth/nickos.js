@@ -12,8 +12,6 @@
     position: absolute;
     color: #222;
     margin: 2px;
-    height: 50px;
-    width: 50px;
     padding: 8px;
     text-align: center;
     font-size: 14px;
@@ -25,6 +23,7 @@
   }
 
   .label {
+    width: 50px;
     margin-top: 5px;
     background: #fff;
   }
