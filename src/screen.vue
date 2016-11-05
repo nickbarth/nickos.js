@@ -26,7 +26,7 @@
   </div>
 </template>
 
-<style scope>
+<style scoped>
   .screen {
     background: #fff;
     position: absolute;

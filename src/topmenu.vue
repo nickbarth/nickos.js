@@ -11,7 +11,7 @@
 </template>
 
 
-<style scope>
+<style scoped>
   .menu {
     width: 100%;
     background: #fff;
@@ -35,6 +35,5 @@
   .icon {
     width: 20px;
     height: 20px;
-    margin-top: -9px;
   }
 </style>

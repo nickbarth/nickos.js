@@ -7,7 +7,7 @@
   </div>
 </template>
 
-<style scope>
+<style scoped>
   .icon {
     position: absolute;
     color: #222;

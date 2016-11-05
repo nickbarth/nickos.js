@@ -112,7 +112,7 @@
   }
 </script>
 
-<style scope>
+<style scoped>
   .desktop {
     height: 100%;
     margin: 0;
