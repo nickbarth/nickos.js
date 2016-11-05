@@ -19,22 +19,20 @@
     data () {
       return {
         dragging: -1,
+        dragX: 0,
+        dragY: 0,
         computed: {
         },
         components: [
           {
             label: "Finder 1",
             type: "window",
-            offsetY: 10,
-            offsetX: 250,
             top: "350",
             left: "250"
           },
           {
             label: "Finder 2",
             type: "window",
-            offsetY: 10,
-            offsetX: 250,
             top: "75",
             left: "200"
           },
@@ -42,8 +40,6 @@
             label: "Disk",
             graphic: "cpu",
             type: "icon",
-            offsetY: 25,
-            offsetX: 25,
             top: "50",
             left: "50"
           },
@@ -51,8 +47,6 @@
             label: "Docs",
             graphic: "folder",
             type: "icon",
-            offsetY: 25,
-            offsetX: 25,
             top: "150",
             left: "50"
           },
@@ -60,8 +54,6 @@
             label: "Calc",
             graphic: "calc",
             type: "icon",
-            offsetY: 25,
-            offsetX: 25,
             top: "250",
             left: "50"
           },
@@ -69,8 +61,6 @@
             label: "Notes",
             graphic: "notes",
             type: "icon",
-            offsetY: 25,
-            offsetX: 25,
             top: "350",
             left: "50"
           },
@@ -78,8 +68,6 @@
             label: "Trash",
             graphic: "trash",
             type: "icon",
-            offsetY: 25,
-            offsetX: 25,
             top: "450",
             left: "50"
           },
@@ -95,14 +83,22 @@
       drag (index) {
         console.log('dragging', index)
         this.dragging = index
+        if (index === -1) {
+          this.dragY = 0
+          this.dragX = 0
+        }
       },
       mousemove (event) {
         event.preventDefault()
         if (this.dragging !== -1) {
           let index = this.dragging
           let item = this.components[index]
-          item.top = event.pageY - item.offsetY
-          item.left = event.pageX - item.offsetX
+          if (this.dragY === 0 && this.dragX === 0) {
+            this.dragX = item.left - event.pageX
+            this.dragY = item.top - event.pageY
+          }
+          item.top = event.pageY + this.dragY
+          item.left = event.pageX + this.dragX
         }
       }
     },

@@ -8,9 +8,6 @@ export default {
     }
   },
   methods: {
-    dragstart(event) {
-      event.dataTransfer.setData('text/html', this.icon_index)
-    },
     move(index) {
       this.$emit('move', index)
     }
