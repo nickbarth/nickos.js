@@ -1,8 +1,8 @@
 <template>
-  <div class="folder" v-bind:style="position">
+  <div class="folder" :style="position" :class="{ hide: this.hide }">
     <div class="infobar" @mousedown="move(icon_index)"
                          @mouseup="move(-1)">
-      <button class="close"></button>
+      <button class="close" @click="close"></button>
       <div class="title"><span>Folder</span></div>
     </div>
     <div class="area">
@@ -42,6 +42,10 @@
 
   .fa {
     color: #fff;
+  }
+
+  .hide {
+    display: none
   }
 
   .infobar {
@@ -169,10 +173,19 @@
   import moveable from './moveable'
 
   let module = {
+    data () {
+      return {
+        hide: false
+      }
+    },
     props: ['icon_index', 'icon'],
+    methods: {
+      close() {
+        this.hide = true
+      }
+    }
   }
 
   _.merge(module, moveable)
   export default module
 </script>
-
