@@ -23025,7 +23025,7 @@ exports.default = _module;
 if (module.exports.__esModule) module.exports = module.exports.default
 var __vue__options__ = (typeof module.exports === "function"? module.exports.options: module.exports)
 if (__vue__options__.functional) {console.error("[vueify] functional components are not supported and should be defined in plain js files using render functions.")}
-__vue__options__.render = function(){with(this){return _h('div',{staticClass:"icon",style:(position),on:{"mousedown":function($event){move(icon_index)},"mouseup":function($event){move(-1)},"dblclick":function($event){click($event)}}},[_h('div',{staticClass:"graphic"},[_h('img',{attrs:{"src":'/icons/'+icon.graphic+'.svg'}})])," ",_h('div',{staticClass:"label"},[_s(icon.label)])])}}
+__vue__options__.render = function(){with(this){return _h('div',{staticClass:"icon",style:(position),on:{"mousedown":function($event){move(icon_index)},"mouseup":function($event){move(-1)},"dblclick":function($event){click($event)}}},[_h('div',{staticClass:"graphic"},[_h('img',{attrs:{"src":'icons/'+icon.graphic+'.svg'}})])," ",_h('div',{staticClass:"label"},[_s(icon.label)])])}}
 __vue__options__.staticRenderFns = []
 __vue__options__._scopeId = "data-v-3"
 if (module.hot) {(function () {  var hotAPI = require("vue-hot-reload-api")

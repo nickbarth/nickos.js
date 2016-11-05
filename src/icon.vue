@@ -2,7 +2,7 @@
   <div class="icon" v-bind:style="position" @mousedown="move(icon_index)"
                                             @mouseup="move(-1)"
                                             @dblclick="click($event)">
-    <div class="graphic"><img :src="'/icons/'+icon.graphic+'.svg'"></div>
+    <div class="graphic"><img :src="'icons/'+icon.graphic+'.svg'"></div>
     <div class="label">{{ icon.label }}</div>
   </div>
 </template>
