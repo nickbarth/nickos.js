@@ -1,5 +1,6 @@
 <template>
   <div class="desktop" v-on:mousemove="mousemove($event)">
+    <topmenu></topmenu>
     <screen @move="drag($event)" :icon_index="0" :icon="components[0]"></screen>
     <screen @move="drag($event)" :icon_index="1" :icon="components[1]"></screen>
     <icon v-for="(obj, index) in getComponents('icon')"
@@ -12,7 +13,7 @@
   import programs from './empty.vue'
   import desktop from './empty.vue'
   import icon from './icon.vue'
-  import startmenu from './empty.vue'
+  import topmenu from './topmenu.vue'
   import screen from './screen.vue'
   export default {
     data () {
@@ -106,7 +107,7 @@
       }
     },
     components: {
-      screen, programs, desktop, icon, startmenu
+      screen, programs, desktop, icon, topmenu
     }
   }
 </script>
