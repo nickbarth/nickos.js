@@ -38,6 +38,13 @@
           <li>Shutdown</li>
         </ul>
       </li>
+      <li class="spacer"></li>
+      <li class="submenu">
+        <span class="header"><img class="icon" src="icons/computer.svg"></span>
+        <ul class="subcontent">
+          <li>Docs</li>
+        </ul>
+      </li>
     </ul>
   </div>
 </template>
@@ -75,6 +82,10 @@
   .submenu {
     position: relative;
     display: inline-block;
+  }
+
+  li.spacer {
+    flex: 1 !important;
   }
 
   .subcontent {
