@@ -16,6 +16,8 @@
   import icon from './icon.vue'
   import topmenu from './topmenu.vue'
   import folder from './folder.vue'
+  import components from './components.json'
+
   export default {
     data () {
       return {
@@ -23,74 +25,7 @@
         dragging: -1,
         dragX: 0,
         dragY: 0,
-        computed: {
-        },
-        components: [
-          {
-            label: "Disk",
-            type: "folder",
-            hide: true,
-            zindex: 0,
-            top: "350",
-            left: "250"
-          },
-          {
-            label: "Folder",
-            type: "folder",
-            hide: false,
-            zindex: 0,
-            top: "75",
-            left: "200"
-          },
-          {
-            label: "Trash",
-            type: "folder",
-            hide: true,
-            zindex: 0,
-            top: "75",
-            left: "200"
-          },
-          {
-            label: "Disk",
-            graphic: "cpu",
-            type: "icon",
-            zindex: 0,
-            top: "50",
-            left: "50"
-          },
-          {
-            label: "Docs",
-            graphic: "folder",
-            type: "icon",
-            zindex: 0,
-            top: "150",
-            left: "50"
-          },
-          {
-            label: "Calc",
-            graphic: "calc",
-            type: "icon",
-            zindex: 0,
-            top: "250",
-            left: "50"
-          },
-          {
-            label: "Notes",
-            graphic: "notes",
-            type: "icon",
-            zindex: 0,
-            top: "350",
-            left: "50"
-          },
-          {
-            label: "Trash",
-            graphic: "trash",
-            type: "icon",
-            zindex: 0,
-            top: "450",
-            left: "50"
-          },
-        ]
+        components: components
       }
     },
     methods: {

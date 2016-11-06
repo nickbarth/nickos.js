@@ -22763,7 +22763,7 @@ setTimeout(function () {
 module.exports = Vue$2;
 
 }).call(this,require('_process'))
-},{"_process":12}],4:[function(require,module,exports){
+},{"_process":13}],4:[function(require,module,exports){
 var inserted = exports.cache = {}
 
 function noop () {}
@@ -22813,6 +22813,10 @@ var _folder = require('./folder.vue');
 
 var _folder2 = _interopRequireDefault(_folder);
 
+var _components = require('./components.json');
+
+var _components2 = _interopRequireDefault(_components);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 exports.default = {
@@ -22822,64 +22826,7 @@ exports.default = {
       dragging: -1,
       dragX: 0,
       dragY: 0,
-      computed: {},
-      components: [{
-        label: "Disk",
-        type: "folder",
-        hide: true,
-        zindex: 0,
-        top: "350",
-        left: "250"
-      }, {
-        label: "Folder",
-        type: "folder",
-        hide: false,
-        zindex: 0,
-        top: "75",
-        left: "200"
-      }, {
-        label: "Trash",
-        type: "folder",
-        hide: true,
-        zindex: 0,
-        top: "75",
-        left: "200"
-      }, {
-        label: "Disk",
-        graphic: "cpu",
-        type: "icon",
-        zindex: 0,
-        top: "50",
-        left: "50"
-      }, {
-        label: "Docs",
-        graphic: "folder",
-        type: "icon",
-        zindex: 0,
-        top: "150",
-        left: "50"
-      }, {
-        label: "Calc",
-        graphic: "calc",
-        type: "icon",
-        zindex: 0,
-        top: "250",
-        left: "50"
-      }, {
-        label: "Notes",
-        graphic: "notes",
-        type: "icon",
-        zindex: 0,
-        top: "350",
-        left: "50"
-      }, {
-        label: "Trash",
-        graphic: "trash",
-        type: "icon",
-        zindex: 0,
-        top: "450",
-        left: "50"
-      }]
+      components: _components2.default
     };
   },
 
@@ -22962,7 +22909,75 @@ if (module.hot) {(function () {  var hotAPI = require("vue-hot-reload-api")
     hotAPI.rerender("data-v-1", __vue__options__)
   }
 })()}
-},{"./empty.vue":6,"./folder.vue":7,"./icon.vue":8,"./topmenu.vue":11,"vue":3,"vue-hot-reload-api":2,"vueify/lib/insert-css":4}],6:[function(require,module,exports){
+},{"./components.json":6,"./empty.vue":7,"./folder.vue":8,"./icon.vue":9,"./topmenu.vue":12,"vue":3,"vue-hot-reload-api":2,"vueify/lib/insert-css":4}],6:[function(require,module,exports){
+module.exports=[
+  {
+    label: "Disk",
+    type: "folder",
+    hide: true,
+    zindex: 0,
+    top: "350",
+    left: "250"
+  },
+  {
+    label: "Folder",
+    type: "folder",
+    hide: false,
+    zindex: 0,
+    top: "75",
+    left: "200"
+  },
+  {
+    label: "Trash",
+    type: "folder",
+    hide: true,
+    zindex: 0,
+    top: "75",
+    left: "200"
+  },
+  {
+    label: "Disk",
+    graphic: "cpu",
+    type: "icon",
+    zindex: 0,
+    top: "50",
+    left: "50"
+  },
+  {
+    label: "Docs",
+    graphic: "folder",
+    type: "icon",
+    zindex: 0,
+    top: "150",
+    left: "50"
+  },
+  {
+    label: "Calc",
+    graphic: "calc",
+    type: "icon",
+    zindex: 0,
+    top: "250",
+    left: "50"
+  },
+  {
+    label: "Notes",
+    graphic: "notes",
+    type: "icon",
+    zindex: 0,
+    top: "350",
+    left: "50"
+  },
+  {
+    label: "Trash",
+    graphic: "trash",
+    type: "icon",
+    zindex: 0,
+    top: "450",
+    left: "50"
+  }
+]
+
+},{}],7:[function(require,module,exports){
 var __vue__options__ = (typeof module.exports === "function"? module.exports.options: module.exports)
 if (__vue__options__.functional) {console.error("[vueify] functional components are not supported and should be defined in plain js files using render functions.")}
 __vue__options__.render = function(){with(this){return _m(0)}}
@@ -22977,7 +22992,7 @@ if (module.hot) {(function () {  var hotAPI = require("vue-hot-reload-api")
     hotAPI.reload("data-v-2", __vue__options__)
   }
 })()}
-},{"vue":3,"vue-hot-reload-api":2}],7:[function(require,module,exports){
+},{"vue":3,"vue-hot-reload-api":2}],8:[function(require,module,exports){
 var __vueify_style_dispose__ = require("vueify/lib/insert-css").insert(".folder[data-v-6] {\n  background: #fff;\n  position: absolute;\n  height: 250px;\n  width: 500px;\n  border: 1px solid #000;\n  color: #555;\n  border-radius: 3px 3px 0 0;\n  box-shadow: 2px 2px 0px #000;\n  display: flex;\n  flex-direction: column;\n}\n\n.fa[data-v-6] {\n  color: #fff;\n}\n\n.hide[data-v-6] {\n  display: none\n}\n\n.infobar[data-v-6] {\n  height: 25px;\n  border-bottom: 1px solid #000;\n  text-align: center;\n  display: flex;\n  background: #fafafa;\n}\n\n.infobar .close[data-v-6] {\n  color: #000;\n  margin: 5px 5px;\n  font-size: 25px;\n  border: 0;\n  border-radius: 0;\n  border: 1px solid #000;\n  background: #fff;\n  display: block;\n  height: 14px;\n  width: 14px;\n}\n\n.infobar .title[data-v-6] {\n  align-self: center;\n  font-size: 14px;\n  flex-grow: 1;\n}\n\n.infobar span[data-v-6] {\n  display: inline-block;\n  margin-left: -24px;\n}\n\n.area[data-v-6] {\n  display: flex;\n  flex: 1;\n  flex-direction: column;\n}\n\n.row[data-v-6] {\n  display: flex;\n  flex: 1;\n  flex-direction: row;\n}\n\n.bottom.row[data-v-6] {\n  flex: 0 0 20px;\n}\n\n.content[data-v-6] {\n  background: #fff;\n  flex: 1;\n}\n\n.scroll[data-v-6] {\n  display: flex;\n  background: #eee;\n}\n\n.scrollbary[data-v-6] {\n  flex: 0 0 20px;\n  width: 20px;\n  border-left: 1px solid #000;\n  flex-direction: column;\n}\n\n.scrollbarx[data-v-6] {\n  flex: 1;\n  height: 20px;\n  border-top: 1px solid #000;\n  flex-direction: row;\n}\n\n.arrow[data-v-6] {\n  text-align: center;\n  flex: 0 0 20px;\n  background: #aaa;\n}\n\n.arrow i[data-v-6] {\n  padding: 1px 0 0 0;\n}\n\n.top.arrow[data-v-6] {\n  border-bottom: 1px solid #000;\n}\n\n.bary[data-v-6] {\n  flex: 1;\n}\n\n.bottom.arrow[data-v-6] {\n  border-top: 1px solid #000;\n}\n\n.left.arrow[data-v-6] {\n  border-right: 1px solid #000;\n}\n\n.barx[data-v-6] {\n  flex: 1;\n}\n\n.right.arrow[data-v-6] {\n  border-left: 1px solid #000;\n}\n\n.resize[data-v-6] {\n  flex: 0 0 20px;\n  height: 20px;\n  border-top: 1px solid #000;\n  border-left: 1px solid #000;\n  text-align: center;\n  background: #aaa;\n}\n\nimg[data-v-6] {\n  padding-top: 4px;\n  width: 14px;\n  height: 14px;\n  text-align: center;\n}")
 ;(function(){
 'use strict';
@@ -23029,7 +23044,7 @@ if (module.hot) {(function () {  var hotAPI = require("vue-hot-reload-api")
     hotAPI.rerender("data-v-6", __vue__options__)
   }
 })()}
-},{"./moveable":10,"lodash":1,"vue":3,"vue-hot-reload-api":2,"vueify/lib/insert-css":4}],8:[function(require,module,exports){
+},{"./moveable":11,"lodash":1,"vue":3,"vue-hot-reload-api":2,"vueify/lib/insert-css":4}],9:[function(require,module,exports){
 var __vueify_style_dispose__ = require("vueify/lib/insert-css").insert(".icon[data-v-3] {\n  position: absolute;\n  color: #222;\n  margin: 2px;\n  padding: 8px;\n  text-align: center;\n  font-size: 14px;\n}\n\n.graphic img[data-v-3] {\n  color: #222;\n  width: 40px;\n}\n\n.label[data-v-3] {\n  width: 50px;\n  margin-top: 5px;\n  background: #fff;\n}")
 ;(function(){
 'use strict';
@@ -23081,7 +23096,7 @@ if (module.hot) {(function () {  var hotAPI = require("vue-hot-reload-api")
     hotAPI.reload("data-v-3", __vue__options__)
   }
 })()}
-},{"./moveable":10,"lodash":1,"vue":3,"vue-hot-reload-api":2,"vueify/lib/insert-css":4}],9:[function(require,module,exports){
+},{"./moveable":11,"lodash":1,"vue":3,"vue-hot-reload-api":2,"vueify/lib/insert-css":4}],10:[function(require,module,exports){
 'use strict';
 
 var Vue = require('vue');
@@ -23094,7 +23109,7 @@ new Vue({
   }
 });
 
-},{"./app.vue":5,"vue":3}],10:[function(require,module,exports){
+},{"./app.vue":5,"vue":3}],11:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -23117,7 +23132,7 @@ exports.default = {
   }
 };
 
-},{}],11:[function(require,module,exports){
+},{}],12:[function(require,module,exports){
 var __vueify_style_dispose__ = require("vueify/lib/insert-css").insert(".menu[data-v-4] {\n  width: 100%;\n  background: #fff;\n  height: 25px;\n  border-bottom: 1px solid #000;\n  font-weight: 500;\n}\n\n.icon[data-v-4] {\n  width: 20px;\n  height: 20px;\n}\n\n.menu > ul[data-v-4] {\n  display: flex;\n  flex-direction: row;\n}\n\n.menu > ul > li[data-v-4] {\n  display: inline-block;\n  flex: 0 0 60px;\n  height: 20px;\n}\n\n.menu > ul > li[data-v-4]:first-child,\n.menu > ul > li[data-v-4]:last-child {\n  margin-left: 20px\n}\n\n.submenu[data-v-4] {\n  position: relative;\n  display: inline-block;\n}\n\nli.spacer[data-v-4] {\n  flex: 1 !important;\n}\n\n.subcontent[data-v-4] {\n  position: absolute;\n  background: #fff;\n  margin-top: 0px;\n  display: none;\n  z-index: 1000;\n  min-width: 50px;\n  border: 1px solid #000;\n  box-shadow: 1px 1px 0px #000;\n}\n\n.subcontent li[data-v-4] {\n  display: inline-block;\n  padding: 2px 20px 2px 10px;\n  font-weight: 200;\n  width: 100%;\n}\n\n.subcontent li[data-v-4]:hover {\n  background: #eee;\n}\n\n.submenu:hover .subcontent[data-v-4] {\n  display: block;\n}\n\n.submenu:hover .header[data-v-4] {\n  background: #eee;\n  border: 1px solid #000;\n  padding: 2px 4px 0 4px;\n  border-top: none;\n  border-bottom: none;\n}\n\n.submenu .header[data-v-4] {\n  width: 100%;\n  display: inline-block;\n  padding: 2px 5px 0 5px;\n  height: 24px;\n  text-align: center;\n}")
 var __vue__options__ = (typeof module.exports === "function"? module.exports.options: module.exports)
 if (__vue__options__.functional) {console.error("[vueify] functional components are not supported and should be defined in plain js files using render functions.")}
@@ -23135,7 +23150,7 @@ if (module.hot) {(function () {  var hotAPI = require("vue-hot-reload-api")
     hotAPI.rerender("data-v-4", __vue__options__)
   }
 })()}
-},{"vue":3,"vue-hot-reload-api":2,"vueify/lib/insert-css":4}],12:[function(require,module,exports){
+},{"vue":3,"vue-hot-reload-api":2,"vueify/lib/insert-css":4}],13:[function(require,module,exports){
 // shim for using process in browser
 var process = module.exports = {};
 
@@ -23317,4 +23332,4 @@ process.chdir = function (dir) {
 };
 process.umask = function() { return 0; };
 
-},{}]},{},[9]);
+},{}]},{},[10]);
