@@ -2,9 +2,9 @@ export default {
   computed: {
     position() {
       return {
-        "top": this.icon.top,
-        "left": this.icon.left,
-        "z-index": this.icon.zindex
+        "top": this.property.top,
+        "left": this.property.left,
+        "z-index": this.property.zindex
       }
     }
   },

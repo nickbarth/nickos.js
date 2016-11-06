@@ -1,9 +1,9 @@
 <template>
-  <div class="icon" :style="position" @mousedown="move(icon_index)"
+  <div class="icon" :style="position" @mousedown="move(cindex)"
                                       @mouseup="move(-1)"
                                       @dblclick="open($event)">
-    <div class="graphic"><img :src="'icons/'+icon.graphic+'.svg'"></div>
-    <div class="label">{{ icon.label }}</div>
+    <div class="graphic"><img :src="'icons/'+property.graphic+'.svg'"></div>
+    <div class="label">{{ property.label }}</div>
   </div>
 </template>
 
@@ -34,15 +34,14 @@
   import moveable from './moveable'
 
   let module = {
-    props: ['icon_index', 'icon'],
+    props: ['cindex', 'property'],
     data() {
       return {
-        test: 4
       }
     },
     methods: {
       open(event) {
-        this.$emit('open', this.icon.label)
+        this.$emit('open', this.property.label)
       }
     },
   }

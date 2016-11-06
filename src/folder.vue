@@ -1,9 +1,9 @@
 <template>
-  <div class="folder" :style="position" :class="{ hide: this.icon.hide }">
-    <div class="infobar" @mousedown="move(icon_index)"
+  <div class="folder" :style="position" :class="{ hide: property.hide }">
+    <div class="infobar" @mousedown="move(cindex)"
                          @mouseup="move(-1)">
       <button class="close" @click="close"></button>
-      <div class="title"><span>{{ this.icon.label }}</span></div>
+      <div class="title"><span>{{ property.label }}</span></div>
     </div>
     <div class="area">
       <div class="row">
@@ -180,10 +180,10 @@
       return {
       }
     },
-    props: ['icon_index', 'icon'],
+    props: ['cindex', 'property'],
     methods: {
       close() {
-        this.icon.hide = true
+        this.property.hide = true
       }
     }
   }

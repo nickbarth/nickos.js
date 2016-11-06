@@ -1,12 +1,12 @@
 <template>
-  <div class="desktop" v-on:mousemove="mousemove($event)">
+  <div class="desktop" @mousemove="mousemove($event)">
     <topmenu></topmenu>
-    <folder @move="drag($event)" :icon_index="0" :icon="components[0]"></folder>
-    <folder @move="drag($event)" :icon_index="1" :icon="components[1]"></folder>
-    <folder @move="drag($event)" :icon_index="2" :icon="components[2]"></folder>
+    <folder @move="drag($event)" :cindex="0" :property="components[0]"></folder>
+    <folder @move="drag($event)" :cindex="1" :property="components[1]"></folder>
+    <folder @move="drag($event)" :cindex="2" :property="components[2]"></folder>
     <icon v-for="(obj, index) in getComponents('icon')"
-      @move="drag($event)" @open="open($event)" :icon_index="index + 3"
-      track-by="index" :icon="obj"></icon>
+      @move="drag($event)" @open="open($event)" :cindex="index + 3"
+      track-by="index" :property="obj"></property>
   </div>
 </template>
 
@@ -28,7 +28,7 @@
         components: [
           {
             label: "Disk",
-            type: "window",
+            type: "folder",
             hide: true,
             zindex: 0,
             top: "350",
@@ -36,7 +36,7 @@
           },
           {
             label: "Folder",
-            type: "window",
+            type: "folder",
             hide: false,
             zindex: 0,
             top: "75",
@@ -44,7 +44,7 @@
           },
           {
             label: "Trash",
-            type: "window",
+            type: "folder",
             hide: true,
             zindex: 0,
             top: "75",

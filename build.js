@@ -22825,21 +22825,21 @@ exports.default = {
       computed: {},
       components: [{
         label: "Disk",
-        type: "window",
+        type: "folder",
         hide: true,
         zindex: 0,
         top: "350",
         left: "250"
       }, {
         label: "Folder",
-        type: "window",
+        type: "folder",
         hide: false,
         zindex: 0,
         top: "75",
         left: "200"
       }, {
         label: "Trash",
-        type: "window",
+        type: "folder",
         hide: true,
         zindex: 0,
         top: "75",
@@ -22948,7 +22948,7 @@ exports.default = {
 if (module.exports.__esModule) module.exports = module.exports.default
 var __vue__options__ = (typeof module.exports === "function"? module.exports.options: module.exports)
 if (__vue__options__.functional) {console.error("[vueify] functional components are not supported and should be defined in plain js files using render functions.")}
-__vue__options__.render = function(){with(this){return _h('div',{staticClass:"desktop",on:{"mousemove":function($event){mousemove($event)}}},[_h('topmenu')," ",_h('folder',{attrs:{"icon_index":0,"icon":components[0]},on:{"move":function($event){drag($event)}}})," ",_h('folder',{attrs:{"icon_index":1,"icon":components[1]},on:{"move":function($event){drag($event)}}})," ",_h('folder',{attrs:{"icon_index":2,"icon":components[2]},on:{"move":function($event){drag($event)}}})," ",_l((getComponents('icon')),function(obj,index){return _h('icon',{attrs:{"icon_index":index + 3,"track-by":"index","icon":obj},on:{"move":function($event){drag($event)},"open":function($event){open($event)}}})})])}}
+__vue__options__.render = function(){with(this){return _h('div',{staticClass:"desktop",on:{"mousemove":function($event){mousemove($event)}}},[_h('topmenu')," ",_h('folder',{attrs:{"cindex":0,"property":components[0]},on:{"move":function($event){drag($event)}}})," ",_h('folder',{attrs:{"cindex":1,"property":components[1]},on:{"move":function($event){drag($event)}}})," ",_h('folder',{attrs:{"cindex":2,"property":components[2]},on:{"move":function($event){drag($event)}}})," ",_l((getComponents('icon')),function(obj,index){return _h('icon',{attrs:{"cindex":index + 3,"track-by":"index","property":obj},on:{"move":function($event){drag($event)},"open":function($event){open($event)}}})})])}}
 __vue__options__.staticRenderFns = []
 __vue__options__._scopeId = "data-v-1"
 if (module.hot) {(function () {  var hotAPI = require("vue-hot-reload-api")
@@ -23001,10 +23001,10 @@ var _module = {
     return {};
   },
 
-  props: ['icon_index', 'icon'],
+  props: ['cindex', 'property'],
   methods: {
     close: function close() {
-      this.icon.hide = true;
+      this.property.hide = true;
     }
   }
 };
@@ -23015,7 +23015,7 @@ exports.default = _module;
 if (module.exports.__esModule) module.exports = module.exports.default
 var __vue__options__ = (typeof module.exports === "function"? module.exports.options: module.exports)
 if (__vue__options__.functional) {console.error("[vueify] functional components are not supported and should be defined in plain js files using render functions.")}
-__vue__options__.render = function(){with(this){return _h('div',{staticClass:"folder",class:{ hide: this.icon.hide },style:(position)},[_h('div',{staticClass:"infobar",on:{"mousedown":function($event){move(icon_index)},"mouseup":function($event){move(-1)}}},[_h('button',{staticClass:"close",on:{"click":close}})," ",_h('div',{staticClass:"title"},[_h('span',[_s(this.icon.label)])])])," ",_m(0)])}}
+__vue__options__.render = function(){with(this){return _h('div',{staticClass:"folder",class:{ hide: property.hide },style:(position)},[_h('div',{staticClass:"infobar",on:{"mousedown":function($event){move(cindex)},"mouseup":function($event){move(-1)}}},[_h('button',{staticClass:"close",on:{"click":close}})," ",_h('div',{staticClass:"title"},[_h('span',[_s(property.label)])])])," ",_m(0)])}}
 __vue__options__.staticRenderFns = [function(){with(this){return _h('div',{staticClass:"area"},[_h('div',{staticClass:"row"},[_h('div',{staticClass:"content"})," ",_h('div',{staticClass:"scroll scrollbary"},[_h('div',{staticClass:"arrow top"},[_h('img',{attrs:{"src":"icons/up.svg"}})])," ",_h('div',{staticClass:"bary"})," ",_h('div',{staticClass:"arrow bottom"},[_h('img',{attrs:{"src":"icons/down.svg"}})])])])," ",_h('div',{staticClass:"row bottom"},[_h('div',{staticClass:"scroll scrollbarx"},[_h('div',{staticClass:"arrow left"},[_h('img',{attrs:{"src":"icons/left.svg"}})])," ",_h('div',{staticClass:"barx"})," ",_h('div',{staticClass:"arrow right"},[_h('img',{attrs:{"src":"icons/right.svg"}})])])," ",_h('div',{staticClass:"resize"},[_h('img',{attrs:{"src":"icons/resize.svg"}})])])])}}]
 __vue__options__._scopeId = "data-v-6"
 if (module.hot) {(function () {  var hotAPI = require("vue-hot-reload-api")
@@ -23049,16 +23049,14 @@ var _moveable2 = _interopRequireDefault(_moveable);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var _module = {
-  props: ['icon_index', 'icon'],
+  props: ['cindex', 'property'],
   data: function data() {
-    return {
-      test: 4
-    };
+    return {};
   },
 
   methods: {
     open: function open(event) {
-      this.$emit('open', this.icon.label);
+      this.$emit('open', this.property.label);
     }
   }
 };
@@ -23069,7 +23067,7 @@ exports.default = _module;
 if (module.exports.__esModule) module.exports = module.exports.default
 var __vue__options__ = (typeof module.exports === "function"? module.exports.options: module.exports)
 if (__vue__options__.functional) {console.error("[vueify] functional components are not supported and should be defined in plain js files using render functions.")}
-__vue__options__.render = function(){with(this){return _h('div',{staticClass:"icon",style:(position),on:{"mousedown":function($event){move(icon_index)},"mouseup":function($event){move(-1)},"dblclick":function($event){open($event)}}},[_h('div',{staticClass:"graphic"},[_h('img',{attrs:{"src":'icons/'+icon.graphic+'.svg'}})])," ",_h('div',{staticClass:"label"},[_s(icon.label)])])}}
+__vue__options__.render = function(){with(this){return _h('div',{staticClass:"icon",style:(position),on:{"mousedown":function($event){move(cindex)},"mouseup":function($event){move(-1)},"dblclick":function($event){open($event)}}},[_h('div',{staticClass:"graphic"},[_h('img',{attrs:{"src":'icons/'+property.graphic+'.svg'}})])," ",_h('div',{staticClass:"label"},[_s(property.label)])])}}
 __vue__options__.staticRenderFns = []
 __vue__options__._scopeId = "data-v-3"
 if (module.hot) {(function () {  var hotAPI = require("vue-hot-reload-api")
@@ -23080,7 +23078,7 @@ if (module.hot) {(function () {  var hotAPI = require("vue-hot-reload-api")
   if (!module.hot.data) {
     hotAPI.createRecord("data-v-3", __vue__options__)
   } else {
-    hotAPI.rerender("data-v-3", __vue__options__)
+    hotAPI.reload("data-v-3", __vue__options__)
   }
 })()}
 },{"./moveable":10,"lodash":1,"vue":3,"vue-hot-reload-api":2,"vueify/lib/insert-css":4}],9:[function(require,module,exports){
@@ -23106,9 +23104,9 @@ exports.default = {
   computed: {
     position: function position() {
       return {
-        "top": this.icon.top,
-        "left": this.icon.left,
-        "z-index": this.icon.zindex
+        "top": this.property.top,
+        "left": this.property.left,
+        "z-index": this.property.zindex
       };
     }
   },
