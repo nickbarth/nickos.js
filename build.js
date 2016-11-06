@@ -23023,7 +23023,7 @@ module.exports=[
   {
     label: "Notes",
     type: "program",
-    hide: false,
+    hide: true,
     zindex: 0,
     top: "180",
     left: "230"
