@@ -105,12 +105,16 @@
 
   .submenu:hover .header {
     background: #eee;
+    border: 1px solid #000;
+    padding: 2px 4px 0 4px;
+    border-top: none;
+    border-bottom: none;
   }
 
   .submenu .header {
     width: 100%;
     display: inline-block;
-    padding-top: 2px;
+    padding: 2px 5px 0 5px;
     height: 24px;
     text-align: center;
   }
