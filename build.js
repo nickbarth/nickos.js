@@ -23041,7 +23041,7 @@ module.exports=[
     graphic: "folder",
     type: "icon",
     zindex: 0,
-    top: "150",
+    top: "110",
     left: "50"
   },
   {
@@ -23049,7 +23049,7 @@ module.exports=[
     graphic: "calc",
     type: "icon",
     zindex: 0,
-    top: "250",
+    top: "180",
     left: "50"
   },
   {
@@ -23057,7 +23057,7 @@ module.exports=[
     graphic: "notes",
     type: "icon",
     zindex: 0,
-    top: "350",
+    top: "260",
     left: "50"
   },
   {
@@ -23065,7 +23065,7 @@ module.exports=[
     graphic: "trash",
     type: "icon",
     zindex: 0,
-    top: "450",
+    top: "340",
     left: "50"
   }
 ]
