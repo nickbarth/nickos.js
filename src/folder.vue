@@ -1,9 +1,9 @@
 <template>
-  <div class="folder" :style="position" :class="{ hide: this.hide }">
+  <div class="folder" :style="position" :class="{ hide: this.icon.hide }">
     <div class="infobar" @mousedown="move(icon_index)"
                          @mouseup="move(-1)">
       <button class="close" @click="close"></button>
-      <div class="title"><span>Folder</span></div>
+      <div class="title"><span>{{ this.icon.label }}</span></div>
     </div>
     <div class="area">
       <div class="row">
@@ -175,13 +175,12 @@
   let module = {
     data () {
       return {
-        hide: false
       }
     },
     props: ['icon_index', 'icon'],
     methods: {
       close() {
-        this.hide = true
+        this.icon.hide = true
       }
     }
   }
