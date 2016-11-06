@@ -37,7 +37,7 @@
           {
             label: "Folder",
             type: "window",
-            hide: true,
+            hide: false,
             zindex: 0,
             top: "75",
             left: "200"

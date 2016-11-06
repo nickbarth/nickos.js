@@ -22833,7 +22833,7 @@ exports.default = {
       }, {
         label: "Folder",
         type: "window",
-        hide: true,
+        hide: false,
         zindex: 0,
         top: "75",
         left: "200"
@@ -22959,7 +22959,7 @@ if (module.hot) {(function () {  var hotAPI = require("vue-hot-reload-api")
   if (!module.hot.data) {
     hotAPI.createRecord("data-v-1", __vue__options__)
   } else {
-    hotAPI.reload("data-v-1", __vue__options__)
+    hotAPI.rerender("data-v-1", __vue__options__)
   }
 })()}
 },{"./empty.vue":6,"./folder.vue":7,"./icon.vue":8,"./topmenu.vue":11,"vue":3,"vue-hot-reload-api":2,"vueify/lib/insert-css":4}],6:[function(require,module,exports){
@@ -22978,7 +22978,7 @@ if (module.hot) {(function () {  var hotAPI = require("vue-hot-reload-api")
   }
 })()}
 },{"vue":3,"vue-hot-reload-api":2}],7:[function(require,module,exports){
-var __vueify_style_dispose__ = require("vueify/lib/insert-css").insert(".folder[data-v-6] {\n  background: #fff;\n  position: absolute;\n  height: 250px;\n  width: 500px;\n  border: 1px solid #000;\n  color: #555;\n  border-radius: 3px 3px 0 0;\n  box-shadow: 2px 2px 0px #000;\n  display: flex;\n  flex-direction: column;\n}\n\n.fa[data-v-6] {\n  color: #fff;\n}\n\n.hide[data-v-6] {\n  display: none\n}\n\n.infobar[data-v-6] {\n  height: 25px;\n  border-bottom: 1px solid #000;\n  text-align: center;\n  display: flex;\n  background: #fafafa;\n}\n\n.infobar .close[data-v-6] {\n  color: #000;\n  margin: 5px 5px;\n  font-size: 25px;\n  border: 0;\n  border-radius: 0;\n  border: 1px solid #000;\n  background: #fff;\n  display: block;\n  height: 14px;\n  width: 14px;\n}\n\n.infobar .title[data-v-6] {\n  align-self: center;\n  font-size: 14px;\n  flex-grow: 1;\n}\n\n.infobar span[data-v-6] {\n  display: inline-block;\n  margin-left: -24px;\n}\n\n.area[data-v-6] {\n  display: flex;\n  flex: 1;\n  flex-direction: column;\n}\n\n.row[data-v-6] {\n  display: flex;\n  flex: 1;\n  flex-direction: row;\n}\n\n.bottom.row[data-v-6] {\n  flex: 0 0 20px;\n}\n\n.content[data-v-6] {\n  background: #fff;\n  flex: 1;\n}\n\n.scroll[data-v-6] {\n  display: flex;\n  background: #eee;\n}\n\n.scrollbary[data-v-6] {\n  flex: 0 0 20px;\n  width: 20px;\n  border-left: 1px solid #000;\n  flex-direction: column;\n}\n\n.scrollbarx[data-v-6] {\n  flex: 1;\n  height: 20px;\n  border-top: 1px solid #000;\n  flex-direction: row;\n}\n\n.arrow[data-v-6] {\n  text-align: center;\n  flex: 0 0 20px;\n  background: #aaa;\n}\n\n.arrow i[data-v-6] {\n  padding: 1px 0 0 0;\n}\n\n.top.arrow[data-v-6] {\n  border-bottom: 1px solid #000;\n}\n\n.bary[data-v-6] {\n  flex: 1;\n}\n\n.bottom.arrow[data-v-6] {\n  border-top: 1px solid #000;\n}\n\n.left.arrow[data-v-6] {\n  border-right: 1px solid #000;\n}\n\n.barx[data-v-6] {\n  flex: 1;\n}\n\n.right.arrow[data-v-6] {\n  border-left: 1px solid #000;\n}\n\n.resize[data-v-6] {\n  flex: 0 0 20px;\n  height: 20px;\n  border-top: 1px solid #000;\n  border-left: 1px solid #000;\n  text-align: center;\n  background: #aaa;\n}\n\n.resize i[data-v-6] {\n  padding-top: 2px;\n}")
+var __vueify_style_dispose__ = require("vueify/lib/insert-css").insert(".folder[data-v-6] {\n  background: #fff;\n  position: absolute;\n  height: 250px;\n  width: 500px;\n  border: 1px solid #000;\n  color: #555;\n  border-radius: 3px 3px 0 0;\n  box-shadow: 2px 2px 0px #000;\n  display: flex;\n  flex-direction: column;\n}\n\n.fa[data-v-6] {\n  color: #fff;\n}\n\n.hide[data-v-6] {\n  display: none\n}\n\n.infobar[data-v-6] {\n  height: 25px;\n  border-bottom: 1px solid #000;\n  text-align: center;\n  display: flex;\n  background: #fafafa;\n}\n\n.infobar .close[data-v-6] {\n  color: #000;\n  margin: 5px 5px;\n  font-size: 25px;\n  border: 0;\n  border-radius: 0;\n  border: 1px solid #000;\n  background: #fff;\n  display: block;\n  height: 14px;\n  width: 14px;\n}\n\n.infobar .title[data-v-6] {\n  align-self: center;\n  font-size: 14px;\n  flex-grow: 1;\n}\n\n.infobar span[data-v-6] {\n  display: inline-block;\n  margin-left: -24px;\n}\n\n.area[data-v-6] {\n  display: flex;\n  flex: 1;\n  flex-direction: column;\n}\n\n.row[data-v-6] {\n  display: flex;\n  flex: 1;\n  flex-direction: row;\n}\n\n.bottom.row[data-v-6] {\n  flex: 0 0 20px;\n}\n\n.content[data-v-6] {\n  background: #fff;\n  flex: 1;\n}\n\n.scroll[data-v-6] {\n  display: flex;\n  background: #eee;\n}\n\n.scrollbary[data-v-6] {\n  flex: 0 0 20px;\n  width: 20px;\n  border-left: 1px solid #000;\n  flex-direction: column;\n}\n\n.scrollbarx[data-v-6] {\n  flex: 1;\n  height: 20px;\n  border-top: 1px solid #000;\n  flex-direction: row;\n}\n\n.arrow[data-v-6] {\n  text-align: center;\n  flex: 0 0 20px;\n  background: #aaa;\n}\n\n.arrow i[data-v-6] {\n  padding: 1px 0 0 0;\n}\n\n.top.arrow[data-v-6] {\n  border-bottom: 1px solid #000;\n}\n\n.bary[data-v-6] {\n  flex: 1;\n}\n\n.bottom.arrow[data-v-6] {\n  border-top: 1px solid #000;\n}\n\n.left.arrow[data-v-6] {\n  border-right: 1px solid #000;\n}\n\n.barx[data-v-6] {\n  flex: 1;\n}\n\n.right.arrow[data-v-6] {\n  border-left: 1px solid #000;\n}\n\n.resize[data-v-6] {\n  flex: 0 0 20px;\n  height: 20px;\n  border-top: 1px solid #000;\n  border-left: 1px solid #000;\n  text-align: center;\n  background: #aaa;\n}\n\nimg[data-v-6] {\n  padding-top: 4px;\n  width: 14px;\n  height: 14px;\n  text-align: center;\n}")
 ;(function(){
 'use strict';
 
@@ -23016,7 +23016,7 @@ if (module.exports.__esModule) module.exports = module.exports.default
 var __vue__options__ = (typeof module.exports === "function"? module.exports.options: module.exports)
 if (__vue__options__.functional) {console.error("[vueify] functional components are not supported and should be defined in plain js files using render functions.")}
 __vue__options__.render = function(){with(this){return _h('div',{staticClass:"folder",class:{ hide: this.icon.hide },style:(position)},[_h('div',{staticClass:"infobar",on:{"mousedown":function($event){move(icon_index)},"mouseup":function($event){move(-1)}}},[_h('button',{staticClass:"close",on:{"click":close}})," ",_h('div',{staticClass:"title"},[_h('span',[_s(this.icon.label)])])])," ",_m(0)])}}
-__vue__options__.staticRenderFns = [function(){with(this){return _h('div',{staticClass:"area"},[_h('div',{staticClass:"row"},[_h('div',{staticClass:"content"})," ",_h('div',{staticClass:"scroll scrollbary"},[_h('div',{staticClass:"arrow top"},[_h('i',{staticClass:"fa fa-arrow-up"})])," ",_h('div',{staticClass:"bary"})," ",_h('div',{staticClass:"arrow bottom"},[_h('i',{staticClass:"fa fa-arrow-down"})])])])," ",_h('div',{staticClass:"row bottom"},[_h('div',{staticClass:"scroll scrollbarx"},[_h('div',{staticClass:"arrow left"},[_h('i',{staticClass:"fa fa-arrow-left"})])," ",_h('div',{staticClass:"barx"})," ",_h('div',{staticClass:"arrow right"},[_h('i',{staticClass:"fa fa-arrow-right"})])])," ",_h('div',{staticClass:"resize"},[_h('i',{staticClass:"fa fa-arrows-alt"})])])])}}]
+__vue__options__.staticRenderFns = [function(){with(this){return _h('div',{staticClass:"area"},[_h('div',{staticClass:"row"},[_h('div',{staticClass:"content"})," ",_h('div',{staticClass:"scroll scrollbary"},[_h('div',{staticClass:"arrow top"},[_h('img',{attrs:{"src":"icons/up.svg"}})])," ",_h('div',{staticClass:"bary"})," ",_h('div',{staticClass:"arrow bottom"},[_h('img',{attrs:{"src":"icons/down.svg"}})])])])," ",_h('div',{staticClass:"row bottom"},[_h('div',{staticClass:"scroll scrollbarx"},[_h('div',{staticClass:"arrow left"},[_h('img',{attrs:{"src":"icons/left.svg"}})])," ",_h('div',{staticClass:"barx"})," ",_h('div',{staticClass:"arrow right"},[_h('img',{attrs:{"src":"icons/right.svg"}})])])," ",_h('div',{staticClass:"resize"},[_h('img',{attrs:{"src":"icons/resize.svg"}})])])])}}]
 __vue__options__._scopeId = "data-v-6"
 if (module.hot) {(function () {  var hotAPI = require("vue-hot-reload-api")
   hotAPI.install(require("vue"), true)
@@ -23026,7 +23026,7 @@ if (module.hot) {(function () {  var hotAPI = require("vue-hot-reload-api")
   if (!module.hot.data) {
     hotAPI.createRecord("data-v-6", __vue__options__)
   } else {
-    hotAPI.reload("data-v-6", __vue__options__)
+    hotAPI.rerender("data-v-6", __vue__options__)
   }
 })()}
 },{"./moveable":10,"lodash":1,"vue":3,"vue-hot-reload-api":2,"vueify/lib/insert-css":4}],8:[function(require,module,exports){

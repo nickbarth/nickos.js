@@ -9,18 +9,18 @@
       <div class="row">
         <div class="content"></div>
         <div class="scroll scrollbary">
-          <div class="arrow top"><i class="fa fa-arrow-up"></i></div>
+          <div class="arrow top"><img src="icons/up.svg"></div>
           <div class="bary"></div>
-          <div class="arrow bottom"><i class="fa fa-arrow-down"></i></div>
+          <div class="arrow bottom"><img src="icons/down.svg"></div>
         </div>
       </div>
       <div class="row bottom">
         <div class="scroll scrollbarx">
-          <div class="arrow left"><i class="fa fa-arrow-left"></i></div>
+          <div class="arrow left"><img src="icons/left.svg"></div>
           <div class="barx"></div>
-          <div class="arrow right"><i class="fa fa-arrow-right"></i></div>
+          <div class="arrow right"><img src="icons/right.svg"></div>
         </div>
-        <div class="resize"><i class="fa fa-arrows-alt"></i></div>
+        <div class="resize"><img src="icons/resize.svg"></div>
       </div>
     </div>
   </div>
@@ -163,8 +163,11 @@
     background: #aaa;
   }
 
-  .resize i {
-    padding-top: 2px;
+  img {
+    padding-top: 4px;
+    width: 14px;
+    height: 14px;
+    text-align: center;
   }
 </style>
 
