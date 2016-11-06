@@ -10,7 +10,7 @@
   {
     label: "Folder",
     type: "folder",
-    hide: false,
+    hide: true,
     zindex: 0,
     top: "75",
     left: "200"
@@ -18,6 +18,14 @@
   {
     label: "Trash",
     type: "folder",
+    hide: true,
+    zindex: 0,
+    top: "75",
+    left: "200"
+  },
+  {
+    label: "Calculator",
+    type: "program",
     hide: true,
     zindex: 0,
     top: "75",

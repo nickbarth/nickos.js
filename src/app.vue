@@ -4,18 +4,19 @@
     <folder @move="drag($event)" :cindex="0" :property="components[0]"></folder>
     <folder @move="drag($event)" :cindex="1" :property="components[1]"></folder>
     <folder @move="drag($event)" :cindex="2" :property="components[2]"></folder>
+    <calculator @move="drag($event)" :cindex="3" :property="components[3]"></calculator>
     <icon v-for="(obj, index) in getComponents('icon')"
-      @move="drag($event)" @open="open($event)" :cindex="index + 3"
+      @move="drag($event)" @open="open($event)" :cindex="index + 4"
       track-by="index" :property="obj"></property>
   </div>
 </template>
 
 <script>
-  import programs from './empty.vue'
   import desktop from './empty.vue'
   import icon from './icon.vue'
   import topmenu from './topmenu.vue'
   import folder from './folder.vue'
+  import calculator from './calc.vue'
   import components from './components.json'
 
   export default {
@@ -60,6 +61,14 @@
             item.left = 190
             item.hide = false
             break
+          case 'Calc':
+            var item = this.components[3]
+            item.zindex = this.zstack
+            this.zstack++
+            item.top = 160
+            item.left = 210
+            item.hide = false
+            break
         }
       },
       drag (index) {
@@ -86,7 +95,7 @@
       }
     },
     components: {
-      folder, programs, desktop, icon, topmenu
+      folder, calculator, desktop, icon, topmenu
     }
   }
 </script>

@@ -22763,7 +22763,7 @@ setTimeout(function () {
 module.exports = Vue$2;
 
 }).call(this,require('_process'))
-},{"_process":13}],4:[function(require,module,exports){
+},{"_process":14}],4:[function(require,module,exports){
 var inserted = exports.cache = {}
 
 function noop () {}
@@ -22812,6 +22812,10 @@ var _topmenu2 = _interopRequireDefault(_topmenu);
 var _folder = require('./folder.vue');
 
 var _folder2 = _interopRequireDefault(_folder);
+
+var _calc = require('./calc.vue');
+
+var _calc2 = _interopRequireDefault(_calc);
 
 var _components = require('./components.json');
 
@@ -22862,6 +22866,14 @@ exports.default = {
           item.left = 190;
           item.hide = false;
           break;
+        case 'Calc':
+          var item = this.components[3];
+          item.zindex = this.zstack;
+          this.zstack++;
+          item.top = 160;
+          item.left = 210;
+          item.hide = false;
+          break;
       }
     },
     drag: function drag(index) {
@@ -22888,14 +22900,14 @@ exports.default = {
     }
   },
   components: {
-    folder: _folder2.default, programs: _empty2.default, desktop: _empty2.default, icon: _icon2.default, topmenu: _topmenu2.default
+    folder: _folder2.default, calculator: _calc2.default, desktop: _empty2.default, icon: _icon2.default, topmenu: _topmenu2.default
   }
 };
 })()
 if (module.exports.__esModule) module.exports = module.exports.default
 var __vue__options__ = (typeof module.exports === "function"? module.exports.options: module.exports)
 if (__vue__options__.functional) {console.error("[vueify] functional components are not supported and should be defined in plain js files using render functions.")}
-__vue__options__.render = function(){with(this){return _h('div',{staticClass:"desktop",on:{"mousemove":function($event){mousemove($event)}}},[_h('topmenu')," ",_h('folder',{attrs:{"cindex":0,"property":components[0]},on:{"move":function($event){drag($event)}}})," ",_h('folder',{attrs:{"cindex":1,"property":components[1]},on:{"move":function($event){drag($event)}}})," ",_h('folder',{attrs:{"cindex":2,"property":components[2]},on:{"move":function($event){drag($event)}}})," ",_l((getComponents('icon')),function(obj,index){return _h('icon',{attrs:{"cindex":index + 3,"track-by":"index","property":obj},on:{"move":function($event){drag($event)},"open":function($event){open($event)}}})})])}}
+__vue__options__.render = function(){with(this){return _h('div',{staticClass:"desktop",on:{"mousemove":function($event){mousemove($event)}}},[_h('topmenu')," ",_h('folder',{attrs:{"cindex":0,"property":components[0]},on:{"move":function($event){drag($event)}}})," ",_h('folder',{attrs:{"cindex":1,"property":components[1]},on:{"move":function($event){drag($event)}}})," ",_h('folder',{attrs:{"cindex":2,"property":components[2]},on:{"move":function($event){drag($event)}}})," ",_h('calculator',{attrs:{"cindex":3,"property":components[3]},on:{"move":function($event){drag($event)}}})," ",_l((getComponents('icon')),function(obj,index){return _h('icon',{attrs:{"cindex":index + 4,"track-by":"index","property":obj},on:{"move":function($event){drag($event)},"open":function($event){open($event)}}})})])}}
 __vue__options__.staticRenderFns = []
 __vue__options__._scopeId = "data-v-1"
 if (module.hot) {(function () {  var hotAPI = require("vue-hot-reload-api")
@@ -22909,7 +22921,64 @@ if (module.hot) {(function () {  var hotAPI = require("vue-hot-reload-api")
     hotAPI.rerender("data-v-1", __vue__options__)
   }
 })()}
-},{"./components.json":6,"./empty.vue":7,"./folder.vue":8,"./icon.vue":9,"./topmenu.vue":12,"vue":3,"vue-hot-reload-api":2,"vueify/lib/insert-css":4}],6:[function(require,module,exports){
+},{"./calc.vue":6,"./components.json":7,"./empty.vue":8,"./folder.vue":9,"./icon.vue":10,"./topmenu.vue":13,"vue":3,"vue-hot-reload-api":2,"vueify/lib/insert-css":4}],6:[function(require,module,exports){
+var __vueify_style_dispose__ = require("vueify/lib/insert-css").insert(".window[data-v-7] {\n  background: #fff;\n  position: absolute;\n  height: 260px;\n  width: 170px;\n  border: 1px solid #000;\n  color: #555;\n  border-radius: 3px 3px 0 0;\n  box-shadow: 2px 2px 0px #000;\n  display: flex;\n  flex-direction: column;\n}\n\n.hide[data-v-7] {\n  display: none\n}\n\n.infobar[data-v-7] {\n  height: 25px;\n  border-bottom: 1px solid #000;\n  text-align: center;\n  display: flex;\n  background: #fafafa;\n}\n\n.infobar .close[data-v-7] {\n  color: #000;\n  margin: 5px 5px;\n  font-size: 25px;\n  border: 0;\n  border-radius: 0;\n  border: 1px solid #000;\n  background: #fff;\n  display: block;\n  height: 14px;\n  width: 14px;\n}\n\n.infobar .title[data-v-7] {\n  align-self: center;\n  font-size: 14px;\n  flex-grow: 1;\n}\n\n.infobar span[data-v-7] {\n  display: inline-block;\n  margin-left: -24px;\n}\n\n.area[data-v-7] {\n  display: flex;\n  flex: 1;\n  flex-direction: column;\n}\n\n.content[data-v-7] {\n  background: #eee;\n  flex: 1;\n}\n\n.screen[data-v-7] {\n  font-size: 25px;\n  line-height: 30px;\n  text-align: right;\n  border: 1px solid #000;\n  background: #fff;\n  height: 30px;\n  margin: 10px;\n  padding-right: 5px;\n}\n\n.keypad[data-v-7] {\n  display: flex;\n  flex-direction: column;\n  width: 150px;\n  margin: 0 auto;\n}\n\n.row[data-v-7] {\n  display: flex;\n  flex: 0 0 30px;\n  flex-direction: row;\n  height: 30px;\n  justify-content: space-between;\n  margin: 2px;\n}\n\n.keypad button[data-v-7] {\n  flex: 0 0 30px;\n  width: 30px;\n  height: 30px;\n  background: #eaeaea;\n  border: 1px solid #000;\n}\n\nbutton.wide[data-v-7] {\n  flex: 0 0 70px;\n}\n\nbutton.long[data-v-7] {\n  height: 65px;\n  z-index: 1;\n}")
+;(function(){
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _lodash = require('lodash');
+
+var _lodash2 = _interopRequireDefault(_lodash);
+
+var _moveable = require('./moveable');
+
+var _moveable2 = _interopRequireDefault(_moveable);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var _module = {
+  data: function data() {
+    return {
+      data: "0"
+    };
+  },
+
+  props: ['cindex', 'property'],
+  methods: {
+    close: function close() {
+      this.property.hide = true;
+    },
+    press: function press(key) {
+      this.data = key;
+    }
+  }
+};
+
+_lodash2.default.merge(_module, _moveable2.default);
+exports.default = _module;
+})()
+if (module.exports.__esModule) module.exports = module.exports.default
+var __vue__options__ = (typeof module.exports === "function"? module.exports.options: module.exports)
+if (__vue__options__.functional) {console.error("[vueify] functional components are not supported and should be defined in plain js files using render functions.")}
+__vue__options__.render = function(){with(this){return _h('div',{staticClass:"window",class:{ hide: property.hide },style:(position)},[_h('div',{staticClass:"infobar",on:{"mousedown":function($event){move(cindex)},"mouseup":function($event){move(-1)}}},[_h('button',{staticClass:"close",on:{"click":close}})," ",_h('div',{staticClass:"title"},[_h('span',[_s(property.label)])])])," ",_h('div',{staticClass:"area"},[_h('div',{staticClass:"content"},[_h('div',{staticClass:"screen"},[_s(data)])," ",_h('div',{staticClass:"keypad"},[_h('div',{staticClass:"row"},[_h('button',{staticClass:"key",on:{"click":function($event){press('c')}}},["C"])," ",_h('button',{staticClass:"key",on:{"click":function($event){press('/')}}},["/"])," ",_h('button',{staticClass:"key",on:{"click":function($event){press('*')}}},["*"])," ",_h('button',{staticClass:"key",on:{"click":function($event){press('=')}}},["="])])," ",_h('div',{staticClass:"row"},[_h('button',{staticClass:"key",on:{"click":function($event){press('7')}}},["7"])," ",_h('button',{staticClass:"key",on:{"click":function($event){press('8')}}},["8"])," ",_h('button',{staticClass:"key",on:{"click":function($event){press('9')}}},["9"])," ",_h('button',{staticClass:"key",on:{"click":function($event){press('-')}}},["-"])])," ",_h('div',{staticClass:"row"},[_h('button',{staticClass:"key",on:{"click":function($event){press('4')}}},["4"])," ",_h('button',{staticClass:"key",on:{"click":function($event){press('5')}}},["5"])," ",_h('button',{staticClass:"key",on:{"click":function($event){press('6')}}},["6"])," ",_h('button',{staticClass:"key",on:{"click":function($event){press('+')}}},["+"])])," ",_h('div',{staticClass:"row"},[_h('button',{staticClass:"key",on:{"click":function($event){press('1')}}},["1"])," ",_h('button',{staticClass:"key",on:{"click":function($event){press('2')}}},["2"])," ",_h('button',{staticClass:"key",on:{"click":function($event){press('3')}}},["3"])," ",_h('button',{staticClass:"key long",on:{"click":function($event){press('E')}}},["E"])])," ",_h('div',{staticClass:"row"},[_h('button',{staticClass:"key wide",on:{"click":function($event){press('0')}}},["0"])," ",_h('button',{staticClass:"key",on:{"click":function($event){press('.')}}},["."])," ",_h('button',{staticClass:"key",on:{"click":function($event){press('.')}}})])])])])])}}
+__vue__options__.staticRenderFns = []
+__vue__options__._scopeId = "data-v-7"
+if (module.hot) {(function () {  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), true)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  module.hot.dispose(__vueify_style_dispose__)
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-7", __vue__options__)
+  } else {
+    hotAPI.rerender("data-v-7", __vue__options__)
+  }
+})()}
+},{"./moveable":12,"lodash":1,"vue":3,"vue-hot-reload-api":2,"vueify/lib/insert-css":4}],7:[function(require,module,exports){
 module.exports=[
   {
     label: "Disk",
@@ -22922,7 +22991,7 @@ module.exports=[
   {
     label: "Folder",
     type: "folder",
-    hide: false,
+    hide: true,
     zindex: 0,
     top: "75",
     left: "200"
@@ -22930,6 +22999,14 @@ module.exports=[
   {
     label: "Trash",
     type: "folder",
+    hide: true,
+    zindex: 0,
+    top: "75",
+    left: "200"
+  },
+  {
+    label: "Calculator",
+    type: "program",
     hide: true,
     zindex: 0,
     top: "75",
@@ -22977,7 +23054,7 @@ module.exports=[
   }
 ]
 
-},{}],7:[function(require,module,exports){
+},{}],8:[function(require,module,exports){
 var __vue__options__ = (typeof module.exports === "function"? module.exports.options: module.exports)
 if (__vue__options__.functional) {console.error("[vueify] functional components are not supported and should be defined in plain js files using render functions.")}
 __vue__options__.render = function(){with(this){return _m(0)}}
@@ -22992,8 +23069,8 @@ if (module.hot) {(function () {  var hotAPI = require("vue-hot-reload-api")
     hotAPI.reload("data-v-2", __vue__options__)
   }
 })()}
-},{"vue":3,"vue-hot-reload-api":2}],8:[function(require,module,exports){
-var __vueify_style_dispose__ = require("vueify/lib/insert-css").insert(".folder[data-v-6] {\n  background: #fff;\n  position: absolute;\n  height: 250px;\n  width: 500px;\n  border: 1px solid #000;\n  color: #555;\n  border-radius: 3px 3px 0 0;\n  box-shadow: 2px 2px 0px #000;\n  display: flex;\n  flex-direction: column;\n}\n\n.fa[data-v-6] {\n  color: #fff;\n}\n\n.hide[data-v-6] {\n  display: none\n}\n\n.infobar[data-v-6] {\n  height: 25px;\n  border-bottom: 1px solid #000;\n  text-align: center;\n  display: flex;\n  background: #fafafa;\n}\n\n.infobar .close[data-v-6] {\n  color: #000;\n  margin: 5px 5px;\n  font-size: 25px;\n  border: 0;\n  border-radius: 0;\n  border: 1px solid #000;\n  background: #fff;\n  display: block;\n  height: 14px;\n  width: 14px;\n}\n\n.infobar .title[data-v-6] {\n  align-self: center;\n  font-size: 14px;\n  flex-grow: 1;\n}\n\n.infobar span[data-v-6] {\n  display: inline-block;\n  margin-left: -24px;\n}\n\n.area[data-v-6] {\n  display: flex;\n  flex: 1;\n  flex-direction: column;\n}\n\n.row[data-v-6] {\n  display: flex;\n  flex: 1;\n  flex-direction: row;\n}\n\n.bottom.row[data-v-6] {\n  flex: 0 0 20px;\n}\n\n.content[data-v-6] {\n  background: #fff;\n  flex: 1;\n}\n\n.scroll[data-v-6] {\n  display: flex;\n  background: #eee;\n}\n\n.scrollbary[data-v-6] {\n  flex: 0 0 20px;\n  width: 20px;\n  border-left: 1px solid #000;\n  flex-direction: column;\n}\n\n.scrollbarx[data-v-6] {\n  flex: 1;\n  height: 20px;\n  border-top: 1px solid #000;\n  flex-direction: row;\n}\n\n.arrow[data-v-6] {\n  text-align: center;\n  flex: 0 0 20px;\n  background: #aaa;\n}\n\n.arrow i[data-v-6] {\n  padding: 1px 0 0 0;\n}\n\n.top.arrow[data-v-6] {\n  border-bottom: 1px solid #000;\n}\n\n.bary[data-v-6] {\n  flex: 1;\n}\n\n.bottom.arrow[data-v-6] {\n  border-top: 1px solid #000;\n}\n\n.left.arrow[data-v-6] {\n  border-right: 1px solid #000;\n}\n\n.barx[data-v-6] {\n  flex: 1;\n}\n\n.right.arrow[data-v-6] {\n  border-left: 1px solid #000;\n}\n\n.resize[data-v-6] {\n  flex: 0 0 20px;\n  height: 20px;\n  border-top: 1px solid #000;\n  border-left: 1px solid #000;\n  text-align: center;\n  background: #aaa;\n}\n\nimg[data-v-6] {\n  padding-top: 4px;\n  width: 14px;\n  height: 14px;\n  text-align: center;\n}")
+},{"vue":3,"vue-hot-reload-api":2}],9:[function(require,module,exports){
+var __vueify_style_dispose__ = require("vueify/lib/insert-css").insert(".folder[data-v-6] {\n  background: #fff;\n  position: absolute;\n  height: 250px;\n  width: 500px;\n  border: 1px solid #000;\n  color: #555;\n  border-radius: 3px 3px 0 0;\n  box-shadow: 2px 2px 0px #000;\n  display: flex;\n  flex-direction: column;\n}\n\n.fa[data-v-6] {\n  color: #fff;\n}\n\n.hide[data-v-6] {\n  display: none\n}\n\n.infobar[data-v-6] {\n  height: 25px;\n  border-bottom: 1px solid #000;\n  text-align: center;\n  display: flex;\n  background: #fafafa;\n}\n\n.infobar .close[data-v-6] {\n  color: #000;\n  margin: 5px 5px;\n  font-size: 25px;\n  border: 0;\n  border-radius: 0;\n  border: 1px solid #000;\n  background: #fff;\n  display: block;\n  height: 14px;\n  width: 14px;\n}\n\n.infobar .title[data-v-6] {\n  align-self: center;\n  font-size: 14px;\n  flex-grow: 1;\n}\n\n.infobar span[data-v-6] {\n  display: inline-block;\n  margin-left: -24px;\n}\n\n.area[data-v-6] {\n  display: flex;\n  flex: 1;\n  flex-direction: column;\n}\n\n.row[data-v-6] {\n  display: flex;\n  flex: 1;\n  flex-direction: row;\n}\n\n.bottom.row[data-v-6] {\n  flex: 0 0 20px;\n}\n\n.content[data-v-6] {\n  background: #fff;\n  flex: 1;\n}\n\n.scroll[data-v-6] {\n  display: flex;\n  background: #eee;\n}\n\n.scrollbary[data-v-6] {\n  flex: 0 0 20px;\n  width: 20px;\n  border-left: 1px solid #000;\n  flex-direction: column;\n}\n\n.scrollbarx[data-v-6] {\n  flex: 1;\n  height: 20px;\n  border-top: 1px solid #000;\n  flex-direction: row;\n}\n\n.arrow[data-v-6] {\n  text-align: center;\n  flex: 0 0 20px;\n  background: #aaa;\n}\n\n.arrow i[data-v-6] {\n  padding: 1px 0 0 0;\n}\n\n.top.arrow[data-v-6] {\n  border-bottom: 1px solid #000;\n}\n\n.bary[data-v-6] {\n  flex: 1;\n}\n\n.bottom.arrow[data-v-6] {\n  border-top: 1px solid #000;\n}\n\n.left.arrow[data-v-6] {\n  border-right: 1px solid #000;\n}\n\n.barx[data-v-6] {\n  flex: 1;\n}\n\n.right.arrow[data-v-6] {\n  border-left: 1px solid #000;\n}\n\n.resize[data-v-6] {\n  flex: 0 0 20px;\n  height: 20px;\n  border-top: 1px solid #000;\n  border-left: 1px solid #000;\n  text-align: center;\n  background: #aaa;\n}\n\nimg[data-v-6] {\n  display: block;\n  width: 14px;\n  height: 14px;\n  margin: 2px auto auto;\n}")
 ;(function(){
 'use strict';
 
@@ -23044,7 +23121,7 @@ if (module.hot) {(function () {  var hotAPI = require("vue-hot-reload-api")
     hotAPI.rerender("data-v-6", __vue__options__)
   }
 })()}
-},{"./moveable":11,"lodash":1,"vue":3,"vue-hot-reload-api":2,"vueify/lib/insert-css":4}],9:[function(require,module,exports){
+},{"./moveable":12,"lodash":1,"vue":3,"vue-hot-reload-api":2,"vueify/lib/insert-css":4}],10:[function(require,module,exports){
 var __vueify_style_dispose__ = require("vueify/lib/insert-css").insert(".icon[data-v-3] {\n  position: absolute;\n  color: #222;\n  margin: 2px;\n  padding: 8px;\n  text-align: center;\n  font-size: 14px;\n}\n\n.graphic img[data-v-3] {\n  color: #222;\n  width: 40px;\n}\n\n.label[data-v-3] {\n  width: 50px;\n  margin-top: 5px;\n  background: #fff;\n}")
 ;(function(){
 'use strict';
@@ -23096,7 +23173,7 @@ if (module.hot) {(function () {  var hotAPI = require("vue-hot-reload-api")
     hotAPI.reload("data-v-3", __vue__options__)
   }
 })()}
-},{"./moveable":11,"lodash":1,"vue":3,"vue-hot-reload-api":2,"vueify/lib/insert-css":4}],10:[function(require,module,exports){
+},{"./moveable":12,"lodash":1,"vue":3,"vue-hot-reload-api":2,"vueify/lib/insert-css":4}],11:[function(require,module,exports){
 'use strict';
 
 var Vue = require('vue');
@@ -23109,7 +23186,7 @@ new Vue({
   }
 });
 
-},{"./app.vue":5,"vue":3}],11:[function(require,module,exports){
+},{"./app.vue":5,"vue":3}],12:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -23132,7 +23209,7 @@ exports.default = {
   }
 };
 
-},{}],12:[function(require,module,exports){
+},{}],13:[function(require,module,exports){
 var __vueify_style_dispose__ = require("vueify/lib/insert-css").insert(".menu[data-v-4] {\n  width: 100%;\n  background: #fff;\n  height: 25px;\n  border-bottom: 1px solid #000;\n  font-weight: 500;\n}\n\n.icon[data-v-4] {\n  width: 20px;\n  height: 20px;\n}\n\n.menu > ul[data-v-4] {\n  display: flex;\n  flex-direction: row;\n}\n\n.menu > ul > li[data-v-4] {\n  display: inline-block;\n  flex: 0 0 60px;\n  height: 20px;\n}\n\n.menu > ul > li[data-v-4]:first-child,\n.menu > ul > li[data-v-4]:last-child {\n  margin-left: 20px\n}\n\n.submenu[data-v-4] {\n  position: relative;\n  display: inline-block;\n}\n\nli.spacer[data-v-4] {\n  flex: 1 !important;\n}\n\n.subcontent[data-v-4] {\n  position: absolute;\n  background: #fff;\n  margin-top: 0px;\n  display: none;\n  z-index: 1000;\n  min-width: 50px;\n  border: 1px solid #000;\n  box-shadow: 1px 1px 0px #000;\n}\n\n.subcontent li[data-v-4] {\n  display: inline-block;\n  padding: 2px 20px 2px 10px;\n  font-weight: 200;\n  width: 100%;\n}\n\n.subcontent li[data-v-4]:hover {\n  background: #eee;\n}\n\n.submenu:hover .subcontent[data-v-4] {\n  display: block;\n}\n\n.submenu:hover .header[data-v-4] {\n  background: #eee;\n  border: 1px solid #000;\n  padding: 2px 4px 0 4px;\n  border-top: none;\n  border-bottom: none;\n}\n\n.submenu .header[data-v-4] {\n  width: 100%;\n  display: inline-block;\n  padding: 2px 5px 0 5px;\n  height: 24px;\n  text-align: center;\n}")
 var __vue__options__ = (typeof module.exports === "function"? module.exports.options: module.exports)
 if (__vue__options__.functional) {console.error("[vueify] functional components are not supported and should be defined in plain js files using render functions.")}
@@ -23150,7 +23227,7 @@ if (module.hot) {(function () {  var hotAPI = require("vue-hot-reload-api")
     hotAPI.rerender("data-v-4", __vue__options__)
   }
 })()}
-},{"vue":3,"vue-hot-reload-api":2,"vueify/lib/insert-css":4}],13:[function(require,module,exports){
+},{"vue":3,"vue-hot-reload-api":2,"vueify/lib/insert-css":4}],14:[function(require,module,exports){
 // shim for using process in browser
 var process = module.exports = {};
 
@@ -23332,4 +23409,4 @@ process.chdir = function (dir) {
 };
 process.umask = function() { return 0; };
 
-},{}]},{},[10]);
+},{}]},{},[11]);
