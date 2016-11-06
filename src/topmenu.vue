@@ -49,7 +49,6 @@
   </div>
 </template>
 
-
 <style scoped>
   .menu {
     width: 100%;
@@ -75,7 +74,8 @@
     height: 20px;
   }
 
-  .menu > ul > li:first-child {
+  .menu > ul > li:first-child,
+  .menu > ul > li:last-child {
     margin-left: 20px
   }
 
