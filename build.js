@@ -22797,21 +22797,21 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _empty = require('./empty.vue');
+var _topmenu = require('./topmenu.vue');
 
-var _empty2 = _interopRequireDefault(_empty);
+var _topmenu2 = _interopRequireDefault(_topmenu);
 
 var _icon = require('./icon.vue');
 
 var _icon2 = _interopRequireDefault(_icon);
 
-var _topmenu = require('./topmenu.vue');
-
-var _topmenu2 = _interopRequireDefault(_topmenu);
-
 var _folder = require('./folder.vue');
 
 var _folder2 = _interopRequireDefault(_folder);
+
+var _notes = require('./notes.vue');
+
+var _notes2 = _interopRequireDefault(_notes);
 
 var _calc = require('./calc.vue');
 
@@ -22874,6 +22874,14 @@ exports.default = {
           item.left = 210;
           item.hide = false;
           break;
+        case 'Notes':
+          var item = this.components[4];
+          item.zindex = this.zstack;
+          this.zstack++;
+          item.top = 180;
+          item.left = 230;
+          item.hide = false;
+          break;
       }
     },
     drag: function drag(index) {
@@ -22900,14 +22908,14 @@ exports.default = {
     }
   },
   components: {
-    folder: _folder2.default, calculator: _calc2.default, desktop: _empty2.default, icon: _icon2.default, topmenu: _topmenu2.default
+    folder: _folder2.default, calculator: _calc2.default, notes: _notes2.default, icon: _icon2.default, topmenu: _topmenu2.default
   }
 };
 })()
 if (module.exports.__esModule) module.exports = module.exports.default
 var __vue__options__ = (typeof module.exports === "function"? module.exports.options: module.exports)
 if (__vue__options__.functional) {console.error("[vueify] functional components are not supported and should be defined in plain js files using render functions.")}
-__vue__options__.render = function(){with(this){return _h('div',{staticClass:"desktop",on:{"mousemove":function($event){mousemove($event)}}},[_h('topmenu')," ",_h('folder',{attrs:{"cindex":0,"property":components[0]},on:{"move":function($event){drag($event)}}})," ",_h('folder',{attrs:{"cindex":1,"property":components[1]},on:{"move":function($event){drag($event)}}})," ",_h('folder',{attrs:{"cindex":2,"property":components[2]},on:{"move":function($event){drag($event)}}})," ",_h('calculator',{attrs:{"cindex":3,"property":components[3]},on:{"move":function($event){drag($event)}}})," ",_l((getComponents('icon')),function(obj,index){return _h('icon',{attrs:{"cindex":index + 4,"track-by":"index","property":obj},on:{"move":function($event){drag($event)},"open":function($event){open($event)}}})})])}}
+__vue__options__.render = function(){with(this){return _h('div',{staticClass:"desktop",on:{"mousemove":function($event){mousemove($event)}}},[_h('topmenu')," ",_h('folder',{attrs:{"cindex":0,"property":components[0]},on:{"move":function($event){drag($event)}}})," ",_h('folder',{attrs:{"cindex":1,"property":components[1]},on:{"move":function($event){drag($event)}}})," ",_h('folder',{attrs:{"cindex":2,"property":components[2]},on:{"move":function($event){drag($event)}}})," ",_h('calculator',{attrs:{"cindex":3,"property":components[3]},on:{"move":function($event){drag($event)}}})," ",_h('notes',{attrs:{"cindex":4,"property":components[4]},on:{"move":function($event){drag($event)}}})," ",_l((getComponents('icon')),function(obj,index){return _h('icon',{attrs:{"cindex":index + 5,"track-by":"index","property":obj},on:{"move":function($event){drag($event)},"open":function($event){open($event)}}})})])}}
 __vue__options__.staticRenderFns = []
 __vue__options__._scopeId = "data-v-1"
 if (module.hot) {(function () {  var hotAPI = require("vue-hot-reload-api")
@@ -22921,7 +22929,7 @@ if (module.hot) {(function () {  var hotAPI = require("vue-hot-reload-api")
     hotAPI.rerender("data-v-1", __vue__options__)
   }
 })()}
-},{"./calc.vue":6,"./components.json":7,"./empty.vue":8,"./folder.vue":9,"./icon.vue":10,"./topmenu.vue":13,"vue":3,"vue-hot-reload-api":2,"vueify/lib/insert-css":4}],6:[function(require,module,exports){
+},{"./calc.vue":6,"./components.json":7,"./folder.vue":8,"./icon.vue":9,"./notes.vue":12,"./topmenu.vue":13,"vue":3,"vue-hot-reload-api":2,"vueify/lib/insert-css":4}],6:[function(require,module,exports){
 var __vueify_style_dispose__ = require("vueify/lib/insert-css").insert(".window[data-v-7] {\n  background: #fff;\n  position: absolute;\n  height: 260px;\n  width: 170px;\n  border: 1px solid #000;\n  color: #555;\n  border-radius: 3px 3px 0 0;\n  box-shadow: 2px 2px 0px #000;\n  display: flex;\n  flex-direction: column;\n}\n\n.hide[data-v-7] {\n  display: none\n}\n\n.infobar[data-v-7] {\n  height: 25px;\n  border-bottom: 1px solid #000;\n  text-align: center;\n  display: flex;\n  background: #fafafa;\n}\n\n.infobar .close[data-v-7] {\n  color: #000;\n  margin: 5px 5px;\n  font-size: 25px;\n  border: 0;\n  border-radius: 0;\n  border: 1px solid #000;\n  background: #fff;\n  display: block;\n  height: 14px;\n  width: 14px;\n}\n\n.infobar .title[data-v-7] {\n  align-self: center;\n  font-size: 14px;\n  flex-grow: 1;\n}\n\n.infobar span[data-v-7] {\n  display: inline-block;\n  margin-left: -24px;\n}\n\n.area[data-v-7] {\n  display: flex;\n  flex: 1;\n  flex-direction: column;\n}\n\n.content[data-v-7] {\n  background: #eee;\n  flex: 1;\n}\n\n.screen[data-v-7] {\n  font-size: 25px;\n  line-height: 30px;\n  text-align: right;\n  border: 1px solid #000;\n  background: #fff;\n  height: 30px;\n  margin: 10px;\n  padding-right: 5px;\n}\n\n.keypad[data-v-7] {\n  display: flex;\n  flex-direction: column;\n  width: 150px;\n  margin: 0 auto;\n}\n\n.row[data-v-7] {\n  display: flex;\n  flex: 0 0 30px;\n  flex-direction: row;\n  height: 30px;\n  justify-content: space-between;\n  margin: 2px;\n}\n\n.keypad button[data-v-7] {\n  flex: 0 0 30px;\n  width: 30px;\n  height: 30px;\n  background: #eaeaea;\n  border: 1px solid #000;\n}\n\nbutton.wide[data-v-7] {\n  flex: 0 0 70px;\n}\n\nbutton.long[data-v-7] {\n  height: 65px;\n  z-index: 1;\n}")
 ;(function(){
 'use strict';
@@ -22978,7 +22986,7 @@ if (module.hot) {(function () {  var hotAPI = require("vue-hot-reload-api")
     hotAPI.rerender("data-v-7", __vue__options__)
   }
 })()}
-},{"./moveable":12,"lodash":1,"vue":3,"vue-hot-reload-api":2,"vueify/lib/insert-css":4}],7:[function(require,module,exports){
+},{"./moveable":11,"lodash":1,"vue":3,"vue-hot-reload-api":2,"vueify/lib/insert-css":4}],7:[function(require,module,exports){
 module.exports=[
   {
     label: "Disk",
@@ -23011,6 +23019,14 @@ module.exports=[
     zindex: 0,
     top: "75",
     left: "200"
+  },
+  {
+    label: "Notes",
+    type: "program",
+    hide: false,
+    zindex: 0,
+    top: "180",
+    left: "230"
   },
   {
     label: "Disk",
@@ -23055,21 +23071,6 @@ module.exports=[
 ]
 
 },{}],8:[function(require,module,exports){
-var __vue__options__ = (typeof module.exports === "function"? module.exports.options: module.exports)
-if (__vue__options__.functional) {console.error("[vueify] functional components are not supported and should be defined in plain js files using render functions.")}
-__vue__options__.render = function(){with(this){return _m(0)}}
-__vue__options__.staticRenderFns = [function(){with(this){return _h('div')}}]
-if (module.hot) {(function () {  var hotAPI = require("vue-hot-reload-api")
-  hotAPI.install(require("vue"), true)
-  if (!hotAPI.compatible) return
-  module.hot.accept()
-  if (!module.hot.data) {
-    hotAPI.createRecord("data-v-2", __vue__options__)
-  } else {
-    hotAPI.reload("data-v-2", __vue__options__)
-  }
-})()}
-},{"vue":3,"vue-hot-reload-api":2}],9:[function(require,module,exports){
 var __vueify_style_dispose__ = require("vueify/lib/insert-css").insert(".folder[data-v-6] {\n  background: #fff;\n  position: absolute;\n  height: 250px;\n  width: 500px;\n  border: 1px solid #000;\n  color: #555;\n  border-radius: 3px 3px 0 0;\n  box-shadow: 2px 2px 0px #000;\n  display: flex;\n  flex-direction: column;\n}\n\n.fa[data-v-6] {\n  color: #fff;\n}\n\n.hide[data-v-6] {\n  display: none\n}\n\n.infobar[data-v-6] {\n  height: 25px;\n  border-bottom: 1px solid #000;\n  text-align: center;\n  display: flex;\n  background: #fafafa;\n}\n\n.infobar .close[data-v-6] {\n  color: #000;\n  margin: 5px 5px;\n  font-size: 25px;\n  border: 0;\n  border-radius: 0;\n  border: 1px solid #000;\n  background: #fff;\n  display: block;\n  height: 14px;\n  width: 14px;\n}\n\n.infobar .title[data-v-6] {\n  align-self: center;\n  font-size: 14px;\n  flex-grow: 1;\n}\n\n.infobar span[data-v-6] {\n  display: inline-block;\n  margin-left: -24px;\n}\n\n.area[data-v-6] {\n  display: flex;\n  flex: 1;\n  flex-direction: column;\n}\n\n.row[data-v-6] {\n  display: flex;\n  flex: 1;\n  flex-direction: row;\n}\n\n.bottom.row[data-v-6] {\n  flex: 0 0 20px;\n}\n\n.content[data-v-6] {\n  background: #fff;\n  flex: 1;\n}\n\n.scroll[data-v-6] {\n  display: flex;\n  background: #eee;\n}\n\n.scrollbary[data-v-6] {\n  flex: 0 0 20px;\n  width: 20px;\n  border-left: 1px solid #000;\n  flex-direction: column;\n}\n\n.scrollbarx[data-v-6] {\n  flex: 1;\n  height: 20px;\n  border-top: 1px solid #000;\n  flex-direction: row;\n}\n\n.arrow[data-v-6] {\n  text-align: center;\n  flex: 0 0 20px;\n  background: #aaa;\n}\n\n.arrow i[data-v-6] {\n  padding: 1px 0 0 0;\n}\n\n.top.arrow[data-v-6] {\n  border-bottom: 1px solid #000;\n}\n\n.bary[data-v-6] {\n  flex: 1;\n}\n\n.bottom.arrow[data-v-6] {\n  border-top: 1px solid #000;\n}\n\n.left.arrow[data-v-6] {\n  border-right: 1px solid #000;\n}\n\n.barx[data-v-6] {\n  flex: 1;\n}\n\n.right.arrow[data-v-6] {\n  border-left: 1px solid #000;\n}\n\n.resize[data-v-6] {\n  flex: 0 0 20px;\n  height: 20px;\n  border-top: 1px solid #000;\n  border-left: 1px solid #000;\n  text-align: center;\n  background: #aaa;\n}\n\nimg[data-v-6] {\n  display: block;\n  width: 14px;\n  height: 14px;\n  margin: 2px auto auto;\n}")
 ;(function(){
 'use strict';
@@ -23121,7 +23122,7 @@ if (module.hot) {(function () {  var hotAPI = require("vue-hot-reload-api")
     hotAPI.rerender("data-v-6", __vue__options__)
   }
 })()}
-},{"./moveable":12,"lodash":1,"vue":3,"vue-hot-reload-api":2,"vueify/lib/insert-css":4}],10:[function(require,module,exports){
+},{"./moveable":11,"lodash":1,"vue":3,"vue-hot-reload-api":2,"vueify/lib/insert-css":4}],9:[function(require,module,exports){
 var __vueify_style_dispose__ = require("vueify/lib/insert-css").insert(".icon[data-v-3] {\n  position: absolute;\n  color: #222;\n  margin: 2px;\n  padding: 8px;\n  text-align: center;\n  font-size: 14px;\n}\n\n.graphic img[data-v-3] {\n  color: #222;\n  width: 40px;\n}\n\n.label[data-v-3] {\n  width: 50px;\n  margin-top: 5px;\n  background: #fff;\n}")
 ;(function(){
 'use strict';
@@ -23173,7 +23174,7 @@ if (module.hot) {(function () {  var hotAPI = require("vue-hot-reload-api")
     hotAPI.reload("data-v-3", __vue__options__)
   }
 })()}
-},{"./moveable":12,"lodash":1,"vue":3,"vue-hot-reload-api":2,"vueify/lib/insert-css":4}],11:[function(require,module,exports){
+},{"./moveable":11,"lodash":1,"vue":3,"vue-hot-reload-api":2,"vueify/lib/insert-css":4}],10:[function(require,module,exports){
 'use strict';
 
 var Vue = require('vue');
@@ -23186,7 +23187,7 @@ new Vue({
   }
 });
 
-},{"./app.vue":5,"vue":3}],12:[function(require,module,exports){
+},{"./app.vue":5,"vue":3}],11:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -23209,7 +23210,61 @@ exports.default = {
   }
 };
 
-},{}],13:[function(require,module,exports){
+},{}],12:[function(require,module,exports){
+var __vueify_style_dispose__ = require("vueify/lib/insert-css").insert(".window[data-v-8] {\n  background: #fff;\n  position: absolute;\n  height: 426px;\n  width: 302px;\n  border: 1px solid #000;\n  color: #555;\n  border-radius: 3px 3px 0 0;\n  box-shadow: 2px 2px 0px #000;\n  display: flex;\n  flex-direction: column;\n}\n\n.hide[data-v-8] {\n  display: none\n}\n\n.infobar[data-v-8] {\n  height: 25px;\n  border-bottom: 1px solid #000;\n  text-align: center;\n  display: flex;\n  background: #fafafa;\n}\n\n.infobar .close[data-v-8] {\n  color: #000;\n  margin: 5px 5px;\n  font-size: 25px;\n  border: 0;\n  border-radius: 0;\n  border: 1px solid #000;\n  background: #fff;\n  display: block;\n  height: 14px;\n  width: 14px;\n}\n\n.infobar .title[data-v-8] {\n  align-self: center;\n  font-size: 14px;\n  flex-grow: 1;\n}\n\n.infobar span[data-v-8] {\n  display: inline-block;\n  margin-left: -24px;\n}\n\n.area[data-v-8] {\n  display: flex;\n  flex: 1;\n  flex-direction: column;\n}\n\n.content[data-v-8] {\n  background: #eee;\n  flex: 1;\n}\n\n.row[data-v-8] {\n  display: flex;\n  flex: 0 0 30px;\n  flex-direction: row;\n  height: 30px;\n  justify-content: space-between;\n  margin: 2px;\n}\n\ntextarea[data-v-8] {\n  height: 400px;\n  width: 300px;\n  font-size: 16px;\n  outline: none;\n  resize: none;\n}")
+;(function(){
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _lodash = require('lodash');
+
+var _lodash2 = _interopRequireDefault(_lodash);
+
+var _moveable = require('./moveable');
+
+var _moveable2 = _interopRequireDefault(_moveable);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var _module = {
+  data: function data() {
+    return {
+      data: "0"
+    };
+  },
+
+  props: ['cindex', 'property'],
+  methods: {
+    close: function close() {
+      this.property.hide = true;
+    }
+  }
+};
+
+_lodash2.default.merge(_module, _moveable2.default);
+exports.default = _module;
+})()
+if (module.exports.__esModule) module.exports = module.exports.default
+var __vue__options__ = (typeof module.exports === "function"? module.exports.options: module.exports)
+if (__vue__options__.functional) {console.error("[vueify] functional components are not supported and should be defined in plain js files using render functions.")}
+__vue__options__.render = function(){with(this){return _h('div',{staticClass:"window",class:{ hide: property.hide },style:(position)},[_h('div',{staticClass:"infobar",on:{"mousedown":function($event){move(cindex)},"mouseup":function($event){move(-1)}}},[_h('button',{staticClass:"close",on:{"click":close}})," ",_h('div',{staticClass:"title"},[_h('span',[_s(property.label)])])])," ",_m(0)])}}
+__vue__options__.staticRenderFns = [function(){with(this){return _h('div',{staticClass:"area"},[_h('div',{staticClass:"content"},[_h('textarea')])])}}]
+__vue__options__._scopeId = "data-v-8"
+if (module.hot) {(function () {  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), true)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  module.hot.dispose(__vueify_style_dispose__)
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-8", __vue__options__)
+  } else {
+    hotAPI.rerender("data-v-8", __vue__options__)
+  }
+})()}
+},{"./moveable":11,"lodash":1,"vue":3,"vue-hot-reload-api":2,"vueify/lib/insert-css":4}],13:[function(require,module,exports){
 var __vueify_style_dispose__ = require("vueify/lib/insert-css").insert(".menu[data-v-4] {\n  width: 100%;\n  background: #fff;\n  height: 25px;\n  border-bottom: 1px solid #000;\n  font-weight: 500;\n}\n\n.icon[data-v-4] {\n  width: 20px;\n  height: 20px;\n}\n\n.menu > ul[data-v-4] {\n  display: flex;\n  flex-direction: row;\n}\n\n.menu > ul > li[data-v-4] {\n  display: inline-block;\n  flex: 0 0 60px;\n  height: 20px;\n}\n\n.menu > ul > li[data-v-4]:first-child,\n.menu > ul > li[data-v-4]:last-child {\n  margin-left: 20px\n}\n\n.submenu[data-v-4] {\n  position: relative;\n  display: inline-block;\n}\n\nli.spacer[data-v-4] {\n  flex: 1 !important;\n}\n\n.subcontent[data-v-4] {\n  position: absolute;\n  background: #fff;\n  margin-top: 0px;\n  display: none;\n  z-index: 1000;\n  min-width: 50px;\n  border: 1px solid #000;\n  box-shadow: 1px 1px 0px #000;\n}\n\n.subcontent li[data-v-4] {\n  display: inline-block;\n  padding: 2px 20px 2px 10px;\n  font-weight: 200;\n  width: 100%;\n}\n\n.subcontent li[data-v-4]:hover {\n  background: #eee;\n}\n\n.submenu:hover .subcontent[data-v-4] {\n  display: block;\n}\n\n.submenu:hover .header[data-v-4] {\n  background: #eee;\n  border: 1px solid #000;\n  padding: 2px 4px 0 4px;\n  border-top: none;\n  border-bottom: none;\n}\n\n.submenu .header[data-v-4] {\n  width: 100%;\n  display: inline-block;\n  padding: 2px 5px 0 5px;\n  height: 24px;\n  text-align: center;\n}")
 var __vue__options__ = (typeof module.exports === "function"? module.exports.options: module.exports)
 if (__vue__options__.functional) {console.error("[vueify] functional components are not supported and should be defined in plain js files using render functions.")}
@@ -23409,4 +23464,4 @@ process.chdir = function (dir) {
 };
 process.umask = function() { return 0; };
 
-},{}]},{},[11]);
+},{}]},{},[10]);

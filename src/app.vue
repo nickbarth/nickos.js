@@ -5,17 +5,18 @@
     <folder @move="drag($event)" :cindex="1" :property="components[1]"></folder>
     <folder @move="drag($event)" :cindex="2" :property="components[2]"></folder>
     <calculator @move="drag($event)" :cindex="3" :property="components[3]"></calculator>
+    <notes @move="drag($event)" :cindex="4" :property="components[4]"></notes>
     <icon v-for="(obj, index) in getComponents('icon')"
-      @move="drag($event)" @open="open($event)" :cindex="index + 4"
+      @move="drag($event)" @open="open($event)" :cindex="index + 5"
       track-by="index" :property="obj"></property>
   </div>
 </template>
 
 <script>
-  import desktop from './empty.vue'
-  import icon from './icon.vue'
   import topmenu from './topmenu.vue'
+  import icon from './icon.vue'
   import folder from './folder.vue'
+  import notes from './notes.vue'
   import calculator from './calc.vue'
   import components from './components.json'
 
@@ -69,6 +70,14 @@
             item.left = 210
             item.hide = false
             break
+          case 'Notes':
+            var item = this.components[4]
+            item.zindex = this.zstack
+            this.zstack++
+            item.top = 180
+            item.left = 230
+            item.hide = false
+            break
         }
       },
       drag (index) {
@@ -95,7 +104,7 @@
       }
     },
     components: {
-      folder, calculator, desktop, icon, topmenu
+      folder, calculator, notes, icon, topmenu
     }
   }
 </script>

@@ -32,6 +32,14 @@
     left: "200"
   },
   {
+    label: "Notes",
+    type: "program",
+    hide: false,
+    zindex: 0,
+    top: "180",
+    left: "230"
+  },
+  {
     label: "Disk",
     graphic: "cpu",
     type: "icon",
