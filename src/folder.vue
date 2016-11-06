@@ -164,10 +164,10 @@
   }
 
   img {
-    padding-top: 4px;
+    display: block;
     width: 14px;
     height: 14px;
-    text-align: center;
+    margin: 2px auto auto;
   }
 </style>
 
