@@ -1,6 +1,6 @@
 # nickos.js
 
-Faux desktop enviroment in javascript using vuejs. Work in progress.
+A faux desktop enviroment in javascript. Work in progress.
 
 https://nickbarth.github.io/nickos.js/
 
