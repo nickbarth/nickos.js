@@ -70,7 +70,6 @@
   }
 
   .content {
-    background: #eee;
     flex: 1;
   }
 
@@ -84,8 +83,9 @@
   }
 
   textarea {
-    height: 400px;
+    height: 399px;
     width: 300px;
+    padding: 5px;
     font-size: 16px;
     outline: none;
     resize: none;
