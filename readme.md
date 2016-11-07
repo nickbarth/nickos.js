@@ -1,6 +1,6 @@
 # nickos.js
 
-Feux desktop enviroment in javascript using vuejs. Work in progress.
+Faux desktop enviroment in javascript using vuejs. Work in progress.
 
 https://nickbarth.github.io/nickos.js/
 
