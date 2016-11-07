@@ -120,11 +120,20 @@
     cursor: default;
   }
 
+  html, body {
+    height: 100%;
+    min-height: 100%;
+  }
+
+  html {
+    padding: 20px;
+  }
+
   body {
     border: 1px solid #000;
     border-radius: 5px;
-    margin: 20px;
-    font-family: 'helvetica neue', 'Lucida Grande', 'Lucida Sans', sans-serif 
+    position: relative;
+    font-family: "helvetica neue", "Lucida Grande", "Lucida Sans", sans-serif;
   }
 
   .desktop {
