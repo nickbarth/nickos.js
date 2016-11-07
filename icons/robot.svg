@@ -4,30 +4,15 @@
     <title>robot</title>
     <desc>Created with Sketch.</desc>
     <defs>
-        <rect id="path-1" x="27" y="0" width="26.459554" height="6.625"></rect>
-        <mask id="mask-2" maskContentUnits="userSpaceOnUse" maskUnits="objectBoundingBox" x="0" y="0" width="26.459554" height="6.625" fill="white">
+        <polygon id="path-1" points="53.459554 0 27 0 10 4 0 19 0 63 10 63 70 63 79.459554 45.625 79.459554 19 79.459554 0"></polygon>
+        <mask id="mask-2" maskContentUnits="userSpaceOnUse" maskUnits="objectBoundingBox" x="0" y="0" width="79.459554" height="63" fill="white">
             <use xlink:href="#path-1"></use>
-        </mask>
-        <polygon id="path-3" points="53 19 79.459554 19 79.459554 45.625 53 45.625"></polygon>
-        <mask id="mask-4" maskContentUnits="userSpaceOnUse" maskUnits="objectBoundingBox" x="0" y="0" width="26.459554" height="26.625" fill="white">
-            <use xlink:href="#path-3"></use>
-        </mask>
-        <polygon id="path-5" points="0 19 26.459554 19 26.459554 45.625 0 45.625"></polygon>
-        <mask id="mask-6" maskContentUnits="userSpaceOnUse" maskUnits="objectBoundingBox" x="0" y="0" width="26.459554" height="26.625" fill="white">
-            <use xlink:href="#path-5"></use>
-        </mask>
-        <polygon id="path-7" points="10 63 70 63 70 4 10 4"></polygon>
-        <mask id="mask-8" maskContentUnits="userSpaceOnUse" maskUnits="objectBoundingBox" x="0" y="0" width="60" height="59" fill="white">
-            <use xlink:href="#path-7"></use>
         </mask>
     </defs>
     <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
         <g id="Icons" transform="translate(-201.000000, -171.000000)">
             <g id="robot" transform="translate(201.000000, 171.000000)">
-                <use id="Rectangle" stroke="#000000" mask="url(#mask-2)" stroke-width="2" fill="#000000" xlink:href="#path-1"></use>
-                <use id="Rectangle" stroke="#000000" mask="url(#mask-4)" stroke-width="2" fill="#000000" xlink:href="#path-3"></use>
-                <use id="Rectangle" stroke="#000000" mask="url(#mask-6)" stroke-width="2" fill="#000000" xlink:href="#path-5"></use>
-                <use id="Combined-Shape" stroke="#000000" mask="url(#mask-8)" stroke-width="2" fill="#000000" xlink:href="#path-7"></use>
+                <use id="Combined-Shape" stroke="#000000" mask="url(#mask-2)" stroke-width="2" fill="#000000" xlink:href="#path-1"></use>
                 <polygon id="Combined-Shape" fill="#FFFFFF" points="63.459554 14 47 14 47 27.625 63.459554 27.625"></polygon>
                 <polygon id="Combined-Shape" fill="#FFFFFF" points="63.459554 34 17 34 17 47.625 63.459554 47.625"></polygon>
                 <polygon id="Combined-Shape" fill="#FFFFFF" points="33.459554 14 17 14 17 27.625 33.459554 27.625"></polygon>
