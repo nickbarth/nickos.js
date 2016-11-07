@@ -13,6 +13,9 @@ export default {
   methods: {
     move (index) {
       this.$emit('move', index)
+    },
+    activate (index) {
+      this.$emit('active', index)
     }
   }
 }

@@ -1,12 +1,12 @@
 <template>
   <div class="desktop" @mousemove="mousemove($event)">
     <topmenu @open="open($event)"></topmenu>
-    <folder @move="drag($event)" :cindex="0" :property="components[0]"></folder>
-    <folder @move="drag($event)" :cindex="1" :property="components[1]"></folder>
-    <folder @move="drag($event)" :cindex="2" :property="components[2]"></folder>
-    <calculator @move="drag($event)" :cindex="3" :property="components[3]"></calculator>
-    <notes @move="drag($event)" :cindex="4" :property="components[4]"></notes>
-    <about @move="drag($event)" @open="open($event)" :cindex="5" :property="components[5]"></about>
+    <folder @active="activate($event)" @move="drag($event)" :cindex="0" :property="components[0]"></folder>
+    <folder @active="activate($event)" @move="drag($event)" :cindex="1" :property="components[1]"></folder>
+    <folder @active="activate($event)" @move="drag($event)" :cindex="2" :property="components[2]"></folder>
+    <calculator @active="activate($event)" @move="drag($event)" :cindex="3" :property="components[3]"></calculator>
+    <notes @active="activate($event)" @move="drag($event)" :cindex="4" :property="components[4]"></notes>
+    <about @active="activate($event)" @move="drag($event)" @open="open($event)" :cindex="5" :property="components[5]"></about>
     <icon v-for="(obj, index) in getComponents('icon')"
       @move="drag($event)" :cindex="index + 6"
       track-by="index" @open="open($event)" :property="obj"></property>
@@ -25,7 +25,7 @@
   export default {
     data () {
       return {
-        zstack: 1,
+        zstack: 100,
         dragging: -1,
         dragX: 0,
         dragY: 0,
@@ -90,6 +90,11 @@
             item.hide = false
             break
         }
+      },
+      activate (index) {
+        var item = this.components[index]
+        this.zstack++
+        item.zindex = this.zstack
       },
       drag (index) {
         if (index === -1) {

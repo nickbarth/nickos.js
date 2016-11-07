@@ -1,5 +1,6 @@
 <template>
-  <div class="folder" :style="position" :class="{ hide: property.hide }">
+  <div class="folder" :style="position" :class="{ hide: property.hide }"
+      @mousedown="activate(cindex)">
     <div class="infobar" @mousedown="move(cindex)"
                          @mouseup="move(-1)">
       <button class="close" @click="close"></button>
