@@ -1,13 +1,14 @@
 <template>
   <div class="desktop" @mousemove="mousemove($event)">
-    <topmenu></topmenu>
+    <topmenu @open="open($event)"></topmenu>
     <folder @move="drag($event)" :cindex="0" :property="components[0]"></folder>
     <folder @move="drag($event)" :cindex="1" :property="components[1]"></folder>
     <folder @move="drag($event)" :cindex="2" :property="components[2]"></folder>
     <calculator @move="drag($event)" :cindex="3" :property="components[3]"></calculator>
     <notes @move="drag($event)" :cindex="4" :property="components[4]"></notes>
+    <about @move="drag($event)" @open="open($event)" :cindex="5" :property="components[5]"></about>
     <icon v-for="(obj, index) in getComponents('icon')"
-      @move="drag($event)" @open="open($event)" :cindex="index + 5"
+      @move="drag($event)" :cindex="index + 6"
       track-by="index" :property="obj"></property>
   </div>
 </template>
@@ -18,6 +19,7 @@
   import folder from './components/folder.vue'
   import notes from './components/notes.vue'
   import calculator from './components/calc.vue'
+  import about from './components/about.vue'
   import components from './components/components.json'
 
   export default {
@@ -79,6 +81,14 @@
             item.left = 230
             item.hide = false
             break
+          case 'About':
+            item = this.components[5]
+            item.zindex = this.zstack
+            this.zstack++
+            item.top = 100
+            item.left = 200
+            item.hide = false
+            break
         }
       },
       drag (index) {
@@ -105,7 +115,7 @@
       }
     },
     components: {
-      folder, calculator, notes, icon, topmenu
+      about, folder, calculator, notes, icon, topmenu
     }
   }
 </script>

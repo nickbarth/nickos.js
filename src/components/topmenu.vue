@@ -4,7 +4,7 @@
       <li class="submenu">
         <span class="header"><img class="icon" src="icons/robot.svg"></span>
         <ul class="subcontent">
-          <li>About</li>
+          <li @mousedown="open('About')">About</li>
         </ul>
       </li>
       <li class="submenu">
@@ -48,6 +48,21 @@
     </ul>
   </div>
 </template>
+
+<script>
+  let module = {
+    data () {
+      return { }
+    },
+    methods: {
+      open (program) {
+        this.$emit('open', program)
+      }
+    }
+  }
+
+  export default module
+</script>
 
 <style scoped>
   .menu {
@@ -112,6 +127,10 @@
 
   .submenu:hover .subcontent {
     display: block;
+  }
+
+  .submenu:active .subcontent {
+    display: none;
   }
 
   .submenu:hover .header {
