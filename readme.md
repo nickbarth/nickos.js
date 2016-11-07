@@ -1,4 +1,4 @@
-# nickos.js
+# NickOS.js
 
 A faux desktop enviroment in Javascript. Work in progress.
 
