@@ -85,7 +85,7 @@
             item = this.components[5]
             item.zindex = this.zstack
             this.zstack++
-            item.top = 100
+            item.top = 50
             item.left = 200
             item.hide = false
             break
