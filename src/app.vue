@@ -9,7 +9,7 @@
     <about @move="drag($event)" @open="open($event)" :cindex="5" :property="components[5]"></about>
     <icon v-for="(obj, index) in getComponents('icon')"
       @move="drag($event)" :cindex="index + 6"
-      track-by="index" :property="obj"></property>
+      track-by="index" @open="open($event)" :property="obj"></property>
   </div>
 </template>
 
