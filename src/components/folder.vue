@@ -20,18 +20,63 @@
           <div class="barx"></div>
           <div class="arrow right"><img src="icons/right.svg"></div>
         </div>
-        <div class="resize"><img src="icons/resize.svg"></div>
+        <div class="resize" @mousedown="drag" @mouseup="drop" @mousemove="mousemove($event)"><img src="icons/resize.svg"></div>
       </div>
     </div>
   </div>
 </template>
 
+<script>
+  import _ from 'lodash'
+  import moveable from './moveable'
+
+  let module = {
+    data () {
+      return {
+        dragging: false,
+        dragX: 0,
+        dragY: 0,
+        height: 250,
+        width: 500
+      }
+    },
+    props: ['cindex', 'property'],
+    methods: {
+      close () {
+        this.property.hide = true
+      },
+      drag (index) {
+        this.dragY = 0
+        this.dragX = 0
+        this.dragging = true
+      },
+      drop (index) {
+        this.dragY = 0
+        this.dragX = 0
+        this.dragging = false
+      },
+      mousemove (event) {
+        event.preventDefault()
+        if (this.dragging) {
+          if (this.dragY === 0 && this.dragX === 0) {
+            this.dragX = this.width - event.pageX
+            this.dragY = this.height - event.pageY
+          }
+          this.height = event.pageY + this.dragY
+          this.width = event.pageX + this.dragX
+        }
+      }
+    }
+  }
+
+  _.merge(module, moveable)
+  export default module
+</script>
+
 <style scoped>
   .folder {
     background: #fff;
     position: absolute;
-    height: 250px;
-    width: 500px;
     border: 1px solid #000;
     color: #555;
     border-radius: 3px 3px 0 0;
@@ -170,24 +215,3 @@
     margin: 2px auto auto;
   }
 </style>
-
-<script>
-  import _ from 'lodash'
-  import moveable from './moveable'
-
-  let module = {
-    data () {
-      return {
-      }
-    },
-    props: ['cindex', 'property'],
-    methods: {
-      close () {
-        this.property.hide = true
-      }
-    }
-  }
-
-  _.merge(module, moveable)
-  export default module
-</script>

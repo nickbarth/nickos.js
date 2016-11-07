@@ -4,6 +4,8 @@ export default {
       return {
         'top': this.property.top + 'px',
         'left': this.property.left + 'px',
+        'height': this.height + 'px',
+        'width': this.width + 'px',
         'z-index': this.property.zindex
       }
     }

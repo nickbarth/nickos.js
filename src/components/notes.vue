@@ -87,6 +87,7 @@
     width: 300px;
     padding: 5px;
     font-size: 16px;
+    border: none;
     outline: none;
     resize: none;
   }

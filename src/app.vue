@@ -110,6 +110,16 @@
   }
 </script>
 
+<style scoped>
+  .desktop {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    background: #fafafa;
+    color: #555;
+  }
+</style>
+
 <style>
   * { 
     box-sizing: border-box;
@@ -133,13 +143,5 @@
     border-radius: 5px;
     position: relative;
     font-family: "helvetica neue", "Lucida Grande", "Lucida Sans", sans-serif;
-  }
-
-  .desktop {
-    height: 100%;
-    margin: 0;
-    padding: 0;
-    background: #fafafa;
-    color: #555;
   }
 </style>

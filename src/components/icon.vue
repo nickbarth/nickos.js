@@ -37,6 +37,8 @@
     props: ['cindex', 'property'],
     data () {
       return {
+        height: 60,
+        width: 66
       }
     },
     methods: {
