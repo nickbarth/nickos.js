@@ -4,7 +4,7 @@ Feux desktop enviroment in javascript using vuejs. Work in progress.
 
 https://nickbarth.github.io/nickos.js/
 
-![Screenshot](https://cdn.rawgit.com/nickbarth/nickos.js/d1b66891c8666ebc74283d6629f52b438f98ba85/screenshot.png)
+![Screenshot](https://cdn.rawgit.com/nickbarth/nickos.js/e3bd5201cb2143e7a3147a3cb95cfbecba6226b4/screenshot.png)
 
 ### Setup
 
