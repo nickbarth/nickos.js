@@ -20,7 +20,7 @@
           <div class="barx"></div>
           <div class="arrow right"><img src="icons/right.svg"></div>
         </div>
-        <div class="resize" @mousedown="drag" @mouseup="drop" @mousemove="mousemove($event)"><img src="icons/resize.svg"></div>
+        <div class="resize" @mousedown="drag" @mouseup="drop" @mouseout="drop" @mousemove="mousemove($event)"><img src="icons/resize.svg"></div>
       </div>
     </div>
   </div>
