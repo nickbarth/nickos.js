@@ -82,7 +82,6 @@
         }
       },
       drag (index) {
-        console.log('mouse move')
         if (index === -1) {
           this.dragY = 0
           this.dragX = 0
