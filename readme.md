@@ -10,7 +10,7 @@ https://nickbarth.github.io/nickos.js/
 
 ```bash
 npm install
-make
+npm run dev
 ```
 
 ### License
