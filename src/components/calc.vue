@@ -161,15 +161,15 @@
   let module = {
     data () {
       return {
-        data: "0"
+        data: '0'
       }
     },
     props: ['cindex', 'property'],
     methods: {
-      close() {
+      close () {
         this.property.hide = true
       },
-      press(key) {
+      press (key) {
         this.data = key
       }
     }

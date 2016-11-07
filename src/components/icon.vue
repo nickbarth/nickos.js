@@ -35,15 +35,15 @@
 
   let module = {
     props: ['cindex', 'property'],
-    data() {
+    data () {
       return {
       }
     },
     methods: {
-      open(event) {
+      open (event) {
         this.$emit('open', this.property.label)
       }
-    },
+    }
   }
 
   _.merge(module, moveable)

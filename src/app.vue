@@ -13,12 +13,12 @@
 </template>
 
 <script>
-  import topmenu from './topmenu.vue'
-  import icon from './icon.vue'
-  import folder from './folder.vue'
-  import notes from './notes.vue'
-  import calculator from './calc.vue'
-  import components from './components.json'
+  import topmenu from './components/topmenu.vue'
+  import icon from './components/icon.vue'
+  import folder from './components/folder.vue'
+  import notes from './components/notes.vue'
+  import calculator from './components/calc.vue'
+  import components from './components/components.json'
 
   export default {
     data () {
@@ -31,15 +31,16 @@
       }
     },
     methods: {
-      getComponents(type) {
-        return this.components.filter(function(item) {
+      getComponents (type) {
+        return this.components.filter(function (item) {
           return item.type === type
         })
       },
       open (program) {
+        var item = null
         switch (program) {
           case 'Disk':
-            var item = this.components[0]
+            item = this.components[0]
             item.zindex = this.zstack
             this.zstack++
             item.top = 100
@@ -47,7 +48,7 @@
             item.hide = false
             break
           case 'Docs':
-            var item = this.components[1]
+            item = this.components[1]
             item.zindex = this.zstack
             this.zstack++
             item.top = 120
@@ -55,7 +56,7 @@
             item.hide = false
             break
           case 'Trash':
-            var item = this.components[2]
+            item = this.components[2]
             item.zindex = this.zstack
             this.zstack++
             item.top = 140
@@ -63,7 +64,7 @@
             item.hide = false
             break
           case 'Calc':
-            var item = this.components[3]
+            item = this.components[3]
             item.zindex = this.zstack
             this.zstack++
             item.top = 160
@@ -71,7 +72,7 @@
             item.hide = false
             break
           case 'Notes':
-            var item = this.components[4]
+            item = this.components[4]
             item.zindex = this.zstack
             this.zstack++
             item.top = 180
@@ -81,6 +82,7 @@
         }
       },
       drag (index) {
+        console.log('mouse move')
         if (index === -1) {
           this.dragY = 0
           this.dragX = 0
@@ -109,7 +111,22 @@
   }
 </script>
 
-<style scoped>
+<style>
+  * { 
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    user-select: none;
+    cursor: default;
+  }
+
+  body {
+    border: 1px solid #000;
+    border-radius: 5px;
+    margin: 20px;
+    font-family: 'helvetica neue', 'Lucida Grande', 'Lucida Sans', sans-serif 
+  }
+
   .desktop {
     height: 100%;
     margin: 0;

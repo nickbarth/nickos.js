@@ -182,7 +182,7 @@
     },
     props: ['cindex', 'property'],
     methods: {
-      close() {
+      close () {
         this.property.hide = true
       }
     }
